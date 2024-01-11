@@ -74,9 +74,9 @@ git clone https://github.com/me-js-bro/Arch-HyprV1.git
 Now run these commands
 
 ```
-cd HyprV1
-chmod +x HyprV1
-./HyprV1
+cd Arch-HyprV1
+chmod +x install.sh
+./install.sh
 ```
 
 ## After you have installed successfully, press ` Mod(Windows Button) + Shift + H ` to see the key bindings.
