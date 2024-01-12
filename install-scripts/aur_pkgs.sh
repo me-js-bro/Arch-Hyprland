@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%H%M%S)_aur_packages.log"
+log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_aur_packages.log"
 
 
 ISAUR=$(command -v yay || command -v paru) # find the aur helper

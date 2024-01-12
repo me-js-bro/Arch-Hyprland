@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%H%M%S)_write_bangla.log"
+log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_write_bangla.log"
 
 ISAUR=$(command -v yay || command -v paru) # find the aur helper
 
@@ -25,7 +25,7 @@ printf "${action} - Now installing ${yellow}Openbangla Keyboard and some bangla 
 for WRITE_BANGLA in openbangla-keyboard ttf-freebanglafont; do
         #First lets see if the package is there
         if $ISAUR -Qs $WRITE_BANGLA >/dev/null; then
-            printf "${done} - $WRITE_BANGLA is already installed.\n"
+            printf "${done} - $WRITE_BANGLA is already installed.\n" 2>&1 | tee -a "$log"
         else
             printf "${note} - Now installing $WRITE_BANGLA ...\n"
             $ISAUR -S --noconfirm $WRITE_BANGLA

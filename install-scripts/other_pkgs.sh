@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%H%M%S)_other_packages.log"
+log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_other_packages.log"
 
 
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
@@ -46,7 +46,7 @@ printf "${action} - Now installing some necessary packages...\n" && sleep 1
 for OTHER_PACKS in ${other_packages[@]}; do
             #First lets see if the package is there
     if $PACKAGE_MAN -Qs $OTHER_PACKS >/dev/null; then
-            printf "${done} - $OTHER_PACKS is already installed.\n"
+            printf "${done} - $OTHER_PACKS is already installed.\n" 2>&1 | tee -a "$log"
             else
         printf "${note} - Now installing $OTHER_PACKS ...\n"
             sudo pacman -S --noconfirm $OTHER_PACKS

@@ -21,5 +21,5 @@ VS_CODE_SETTINGS=$HOME/.config/Code/User/settings.json
         printf "${action} - Backing up settings.json for vs-code\n"
         mv $VS_CODE_SETTINGS $VS_CODE_SETTINGS.backup
     fi
-printf "${action} - Copying Vs-Code theme..."
-cp -r extras/settings.json "$HOME/.config/Code/User/"
+printf "${action} - Copying Vs-Code theme...\n"
+cp -r 'extras/settings.json' "$HOME/.config/Code/User/"

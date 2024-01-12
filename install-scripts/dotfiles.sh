@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%H%M%S)_dotfiles.log"
+log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_dotfiles.log"
 
 
 mkdir -p ~/.config
@@ -42,7 +42,7 @@ mkdir -p ~/.config
     mv ~/.config/hypr ~/.config/hypr-backup
     fi
 
-    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr
+    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr 2>&1
 
 
     cp -r "$dotfiles_dir" "$HOME/.config/"

@@ -27,17 +27,17 @@ printf " \n"
 printf " \n"
 printf " \n"
 
-printf "${cyan}______________________________________________________________________________${end}\n"
+printf "${cyan}         _______________________________________________________________________________________${end}\n"
 printf " \n"
-printf "            ||\      //|        //\        ||         |  ()  ||\      | \n"
-printf "            || \    // |       //  \       ||         |  ||  || \     | \n"
-printf "            ||  \  //  |      //    \      ||         |  ||  ||  \    | \n"
-printf "            ||   \//   |     //      \     ||---------|  ||  ||   \   | \n"
-printf "            ||         |    //--------\    ||         |  ||  ||    \  | \n"
-printf "            ||         |   //          \   ||         |  ||  ||     \ | \n"
-printf "            ||         |  //            \  ||         |  ||  ||      \| \n"
+printf "                        ||\      //|        //\        ||         |  ()  ||\      | \n"
+printf "                        || \    // |       //  \       ||         |  ||  || \     | \n"
+printf "                        ||  \  //  |      //    \      ||         |  ||  ||  \    | \n"
+printf "                        ||   \//   |     //      \     ||---------|  ||  ||   \   | \n"
+printf "                        ||         |    //--------\    ||         |  ||  ||    \  | \n"
+printf "                        ||         |   //          \   ||         |  ||  ||     \ | \n"
+printf "                        ||         |  //            \  ||         |  ||  ||      \| \n"
 printf " \n"
-printf "${cyan}______________________________________________________________________________${end}\n"
+printf "${cyan}         _______________________________________________________________________________________${end}\n"
 
 printf " \n"
 printf " \n"
@@ -60,7 +60,7 @@ error="${red}[ ERROR ]${end}"
 
 # creating install log dir
     mkdir -p Install-Logs
-    log="Install-Logs/install-$(date +%d-%H%M%S).log"
+    log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p).log"
 
 
 ### Ask user for the confirmation...###
@@ -91,9 +91,23 @@ else
     # AUR Helper
     printf "${note} - Select aur helper:\n1) yay\n2) paru\n"
     read -n1 -rep "Enter option number : " AUR_HELPER
+
+    # Installing AUR Helper
+    aur_dir="$install_script_dir/aur_helper"
+    if [[ $AUR_HELPER == "1" ]]; then
+        "$aur_dir/yay.sh"
+
+    elif [[ $AUR_HELPER == "2" ]]; then
+        "$aur_dir/paru.sh"
+
+    else
+        printf "${error} - Invalid option,, Exiting script. Please re-execute the script and select between [ 1/2 ]\n" 2>&1 | tee -a "$log"
+        sleep 2
+        exit 1
+    fi
 fi
 
-#-------- Asking somd prompts --------#
+#-------- Asking some prompts --------#
 
 ## Install Packages
 printf "${note} - Would you like to install the packages? [ y/n ]\n"
@@ -127,24 +141,6 @@ read -n1 -rep "Select: " code
 printf "${note} - Would like to install gtk light and dark and qt5 theme on your system? [ y/n ]\n"
 read -n1 -rep "Select: " theme
 
-
-
-
-
-# Installing AUR Helper
-    aur_dir="$install_script_dir/aur_helper"
-    if [[ $AUR_HELPER == "1" ]]; then
-        "$aur_dir/yay.sh"
-
-    elif [[ $AUR_HELPER == "2" ]]; then
-        "$aur_dir/paru.sh"
-
-    else
-        printf "${error} - Invalid option,, Exiting script. Please re-execute the script and select between [ 1/2 ]\n" 2>&1 | tee -a "$log"
-        sleep 2
-        exit 1
-    fi
-fi
 
 # Update system before proceeding
 printf "${action} - Updating the full system before proceeding to the next step...\n"

@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%H%M%S)_zsh.log"
+log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_zsh.log"
 
 
 # clear the screen
@@ -26,7 +26,7 @@ PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
 # ---- install zsh ---- #
 if $PACKAGE_MAN -Qs zsh >/dev/null; then
-      printf "${done} - zsh is already installed.\n"
+      printf "${done} - zsh is already installed.\n" 2>&1 | tee -a "$log"
 else
       printf "${attention} - Now installing zsh ...\n"
       sudo pacman -S --noconfirm zsh
