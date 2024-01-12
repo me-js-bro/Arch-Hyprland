@@ -16,16 +16,18 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_dotfiles.log"
+
 
 mkdir -p ~/.config
 
-    printf "${note} - Copying config files...\n"
+    printf "${note} - Copying config files...\n" 2>&1 | tee -a "$log"
     for DIR in alacritty cava hypr kitty neofetch swaylock waybar wlogout wofi; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
-            printf "${attention} - Config for $DIR located, backing up.\n"
+            printf "${attention} - Config for $DIR located, backing up.\n" 2>&1 | tee -a "$log"
             mv $DIRPATH $DIRPATH-back
-            printf "${done} - Backed up $DIR to $DIRPATH-back.\n"
+            printf "${done} - Backed up $DIR to $DIRPATH-back.\n" 2>&1 | tee -a "$log"
         fi
     done
 
@@ -33,16 +35,18 @@ mkdir -p ~/.config
 
     clear
 
-    printf "${action} - Cloning and copying dotfiles...\n" && sleep 1
+    printf "${action} - Cloning and copying dotfiles...\n" 2>&1 | tee -a "$log" && sleep 1
 
+    hypr_dir="$HOME/.config/hypr"
+    if [ -d $hypr_dir ]; then
     mv ~/.config/hypr ~/.config/hypr-backup
+    fi
 
     git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr
 
 
     cp -r "$dotfiles_dir" "$HOME/.config/"
 
-    # cp -r $HOME/HyprV1/hypr ~/.config/
     ln -sf ~/.config/hypr/kitty ~/.config/kitty
     ln -sf ~/.config/hypr/cava ~/.config/cava
     ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
@@ -52,7 +56,7 @@ mkdir -p ~/.config
     ln -sf ~/.config/hypr/wofi ~/.config/wofi
     ln -sf ~/.config/hypr/dunst ~/.config/dunst
     sleep 1
-    printf "${done} - Copying config files finished...\n" 
+    printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
 
 sleep 1
 
@@ -63,11 +67,11 @@ if [ -d $SCRIPT_DIR ]; then
     # make all the scripts executable...
     chmod +x "$SCRIPT_DIR"/*
 
-    printf "${done} - All the necessary scripts have been executable.\n" 
+    printf "${done} - All the necessary scripts have been executable.\n" 2>&1 | tee -a "$log"
 
     sleep 1
 else
-    printf "${error} - Could not find necessary scripts\n" 
+    printf "${error} - Could not find necessary scripts\n" 2>&1 | tee -a "$log"
 fi
 
 WLDIR=/usr/share/wayland-sessions

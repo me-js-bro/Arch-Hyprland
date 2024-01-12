@@ -27,17 +27,17 @@ printf " \n"
 printf " \n"
 printf " \n"
 
-printf "${green}_____________________________________________________________________________________${end}\n"
-printf "${cyan} \n"
-printf "            ||\      //|        //\        ||         |  ||  ||\      | \n"
+printf "${cyan}______________________________________________________________________________${end}\n"
+printf " \n"
+printf "            ||\      //|        //\        ||         |  ()  ||\      | \n"
 printf "            || \    // |       //  \       ||         |  ||  || \     | \n"
 printf "            ||  \  //  |      //    \      ||         |  ||  ||  \    | \n"
 printf "            ||   \//   |     //      \     ||---------|  ||  ||   \   | \n"
 printf "            ||         |    //--------\    ||         |  ||  ||    \  | \n"
 printf "            ||         |   //          \   ||         |  ||  ||     \ | \n"
 printf "            ||         |  //            \  ||         |  ||  ||      \| \n"
-printf "${end} \n"
-printf "${green}_____________________________________________________________________________________${end}\n"
+printf " \n"
+printf "${cyan}______________________________________________________________________________${end}\n"
 
 printf " \n"
 printf " \n"
@@ -58,6 +58,11 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+# creating install log dir
+    mkdir -p Install-Logs
+    log="Install-Logs/install-$(date +%d-%H%M%S).log"
+
+
 ### Ask user for the confirmation...###
 printf "${attention} - Would you like to continue with the installer script? [ y/n ]\n"
 read -p "Select: " ok_script
@@ -65,14 +70,6 @@ read -p "Select: " ok_script
 if [[ $ok_script == "Y" || $ok_script == "y" ]]; then
     clear
     printf "${action} - Starting installation script..\n"
-    sleep 1
-    clear
-
-    printf "${action} - Starting installation script...\n"
-    sleep 1
-    clear
-
-    printf "${action} - Starting installation script....\n"
     sleep 1
     clear
 else
@@ -83,10 +80,20 @@ fi
 sleep 1
 clear
 
-########## Asking somd prompts ############
-# AUR Helper
-printf "${note} - Select aur helper:\n1) yay\n2) paru\n"
-read -n1 -rep "Enter option number : " AUR_HELPER
+# Check for AUR helper and install if not found
+ISAUR=$(command -v yay || command -v paru)
+
+if [ -n "$ISAUR" ]; then
+    printf "${note} - ${green}AUR helper${end} was located, moving on...\n" 
+    sleep 2
+    clear
+else
+    # AUR Helper
+    printf "${note} - Select aur helper:\n1) yay\n2) paru\n"
+    read -n1 -rep "Enter option number : " AUR_HELPER
+fi
+
+#-------- Asking somd prompts --------#
 
 ## Install Packages
 printf "${note} - Would you like to install the packages? [ y/n ]\n"
@@ -120,15 +127,8 @@ read -n1 -rep "Select: " code
 printf "${note} - Would like to install gtk light and dark and qt5 theme on your system? [ y/n ]\n"
 read -n1 -rep "Select: " theme
 
-#### Check for yay or paru ####
-# Check for AUR helper and install if not found
-ISAUR=$(command -v yay || command -v paru)
 
-if [ -n "$ISAUR" ]; then
-    printf "${note} - ${green}AUR helper${end} was located, moving on...\n" 
-    sleep 2
-    clear
-else
+
 
 
 # Installing AUR Helper
@@ -137,10 +137,10 @@ else
         "$aur_dir/yay.sh"
 
     elif [[ $AUR_HELPER == "2" ]]; then
-        "$aur_dir/yay.sh"
+        "$aur_dir/paru.sh"
 
     else
-        printf "${error} - Invalid option,, Exiting script. Please re-execute the script and select between [ 1/2 ]\n" | tee -a "$log"
+        printf "${error} - Invalid option,, Exiting script. Please re-execute the script and select between [ 1/2 ]\n" 2>&1 | tee -a "$log"
         sleep 2
         exit 1
     fi
@@ -164,19 +164,19 @@ if [[ $INST_PKGS == "Y" || $INST_PKGS == "y" ]]; then
     if [[ $bluetooth == "y" || $bluetooth == "Y" ]]; then
         "$install_script_dir/bluetooth.sh"  # install and setup bluetooth
     else
-        printf "${error} - Bluetooth services wont be installed...\n"
+        printf "${error} - Bluetooth services wont be installed...\n" 2>&1 | tee -a "$log"
     fi
 
     if [[ $BANGLA == "y" || $BANGLA == "Y" ]]; then
         "$install_script_dir/write_bangla.sh"   # install openbangla keyboard and some bangla fonts
     else
-        printf "${error} - Openbangla Keyboard and some Bangla Fonts will not be installed...\n"
+        printf "${error} - Openbangla Keyboard and some Bangla Fonts will not be installed...\n" 2>&1 | tee -a "$log"
     fi
     
     "$install_script_dir/other_pkgs.sh" # other packages (necessary)
     "$install_script_dir/fonts.sh"      # fonts
 else
-    printf "${attention} - Packages were not installed.\n" 
+    printf "${attention} - Packages were not installed.\n" 2>&1 | tee -a "$log"
 fi
 
 # Enable the sddm login manager service
@@ -192,14 +192,15 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     "$install_script_dir/dotfiles.sh"
 
 else
-    printf "${error} - Copying cancled\n" 
+    printf "${error} - Copying dotfiles cancled\n" 2>&1 | tee -a "$log"
 fi
 
-INSTALL_DIR="$HOME"/HyprV1/install-scripts
 
 # Set SDDM Theme
 if [[ $SDDM_CFG == "y" || $SDDM_CFG == "Y" ]]; then
     "$install_script_dir/sddm.sh"
+else
+    printf "${error} - Setting up the SDDM theme cancled :(\n" 2>&1 | tee -a "$log"
 fi
 
 clear
@@ -208,13 +209,18 @@ clear
 # Installing zsh and oh-my-zsh
 if [[ $zsh == "y" || $zsh == "Y" ]]; then
     "$install_script_dir/zsh.sh"
+else
+    printf "${error} - Installing and setting up the zsh is cancled :(\n" 2>&1 | tee -a "$log"
 fi
+
 
 
 
 # Vs Code Theme Set
 if [[ $code == "y" || $code == "Y" ]]; then
     "$install_script_dir/code-oss.sh"
+else
+    printf "${error} - Configuring vs-code is cancled :(\n"  2>&1 | tee -a "$log"
 fi
 
 
@@ -223,6 +229,20 @@ fi
 if [[ $theme == "y" || $theme == "Y" ]]; then
     printf "${action} - Installing GTK theme..\n"
     "$install_script_dir/themes.sh"
+else
+    printf "${error} - Installing gtk theme has cancled :(\n" 2>&1 | tee -a "$log"
+fi
+
+
+printf "${done} - installation completed, would you like to rebooting your system...[ y/n ]\n"
+read -p "Select: " REBOOT
+
+if [[ $REBOOT == "Y" || $REBOOT == "y" ]]; then
+    printf "${note} - Syste will reboot now..\n"
+    sleep 1
+    reboot
+else
+    exit 1
 fi
 
 ############## Script exits here ################

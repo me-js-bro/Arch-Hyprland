@@ -16,6 +16,8 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_fonts.log"
+
 
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
@@ -30,7 +32,7 @@ for FONTS in ttf-font-awesome ttf-cascadia-code ttf-jetbrains-mono-nerd ttf-mesl
             printf "${note} - Now installing $FONTS ...\n"
             sudo pacman -S --noconfirm $FONTS
             if pacman -Qs $FONTS >/dev/null; then
-                printf "${done} - $FONTS was installed successfully!\n" 
+                printf "${done} - $FONTS was installed successfully!\n" 2>&1 | tee -a "$log"
             else
                 printf "${error} - $FONTS install had failed :(\n" 
             fi

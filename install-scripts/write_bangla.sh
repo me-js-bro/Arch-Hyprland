@@ -16,6 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_write_bangla.log"
 
 ISAUR=$(command -v yay || command -v paru) # find the aur helper
 
@@ -29,9 +30,9 @@ for WRITE_BANGLA in openbangla-keyboard ttf-freebanglafont; do
             printf "${note} - Now installing $WRITE_BANGLA ...\n"
             $ISAUR -S --noconfirm $WRITE_BANGLA
             if $ISAUR -Qs $WRITE_BANGLA >/dev/null; then
-                printf "${done} - $WRITE_BANGLA was installed successfully!\n" 
+                printf "${done} - $WRITE_BANGLA was installed successfully!\n" 2>&1 | tee -a "$log"
             else
-                printf "${error} - $WRITE_BANGLA install had failed :(\n" 
+                printf "${error} - $WRITE_BANGLA install had failed, Please check the $log file. :(\n" 2>&1 | tee -a "$log"
             fi
         fi
     done

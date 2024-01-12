@@ -29,9 +29,7 @@
 
 - WM: [`Hyprland`](https://github.com/hyprwm/Hyprland) - install it while installing arch linux with `archinstall` script.
  
-- Terminal 1: [`Alacritty`](https://github.com/alacritty/alacritty)
-
-- Terminal 2: [`Kitty`](https://github.com/kovidgoyal/kitty)
+- Terminal: [`Kitty`](https://github.com/kovidgoyal/kitty)
  
 - Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
  

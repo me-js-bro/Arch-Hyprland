@@ -16,6 +16,8 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_aur_packages.log"
+
 
 ISAUR=$(command -v yay || command -v paru) # find the aur helper
 
@@ -32,20 +34,20 @@ grimblast
 visual-studio-code-bin
     )
 
-printf "${action} - Now installing some packages from $ISAUR\n" && sleep 1
+printf "${action} - Now installing some packages from the aur helper...\n" && sleep 1
 
 # Installing from the AUR Helper
 for AUR_SOFS in ${aur_packages[@]}; do
         #First lets see if the package is there
         if $ISAUR -Qs $AUR_SOFS >/dev/null; then
-            printf "${done} - $AUR_SOFS is already installed.\n"
+            printf "${done} - $AUR_SOFS is already installed.\n" 2>&1 | tee -a "$log"
         else
             printf "${note} - Now installing $AUR_SOFS ...\n"
             $ISAUR -S --noconfirm $AUR_SOFS
             if $ISAUR -Qs $AUR_SOFS >/dev/null; then
-                printf "${done} - $AUR_SOFS was installed successfully!\n" 
+                printf "${done} - $AUR_SOFS was installed successfully!\n" 2>&1 | tee -a "$log"
             else
-                printf "${error} - $AUR_SOFS install had failed :(\n" 
+                printf "${error} - $AUR_SOFS install had failed. Please check the $log file :(\n" 2>&1 | tee -a "$log"
             fi
         fi
     done

@@ -16,6 +16,8 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_other_packages.log"
+
 
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
@@ -49,13 +51,13 @@ for OTHER_PACKS in ${other_packages[@]}; do
         printf "${note} - Now installing $OTHER_PACKS ...\n"
             sudo pacman -S --noconfirm $OTHER_PACKS
         if pacman -Qs $OTHER_PACKS >/dev/null; then
-            printf "${done} - $OTHER_PACKS was installed successfully!\n" 
+            printf "${done} - $OTHER_PACKS was installed successfully!\n" 2>&1 | tee -a "$log"
             # Start the bluetooth service
             # printf "${note} - Starting the Bluetooth Service...\n"
             # sudo systemctl enable --now bluetooth.service
             sleep 2
         else
-            printf "${error} - $OTHER_PACKS install had failed :(\n" 
+            printf "${error} - $OTHER_PACKS install had failed, Please check the $log file :(\n" 2>&1 | tee -a "$log"
         fi
     fi
 done

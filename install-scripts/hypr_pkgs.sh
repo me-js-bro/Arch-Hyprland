@@ -16,6 +16,8 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%d-%H%M%S)_hypr_packages.log"
+
 
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
@@ -44,9 +46,9 @@ printf "${note} - Installing main packages, this may take a while...\n" && sleep
             printf "${note} - Now installing $SOFTWR ...\n"
             sudo pacman -S --noconfirm $SOFTWR
             if pacman -Qs $SOFTWR >/dev/null; then
-                printf "${done} - $SOFTWR was installed successfully!\n" 
+                printf "${done} - $SOFTWR was installed successfully!\n" 2>&1 | tee -a "$log"
             else
-                printf "${error} - $SOFTWR install had failed :(\n" 
+                printf "${error} - $SOFTWR install had failed, Please check the $log file :(\n" 2>&1 | tee -a "$log"
             fi
         fi
     done

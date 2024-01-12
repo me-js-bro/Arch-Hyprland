@@ -74,13 +74,3 @@ cd ~/.icons
 tar xf Nordzy-cursors.tar.gz
 tar xf Icon_TelaDracula.tar.gz
 
-printf "${done} - installation completed, would you like to rebooting your system...[ y/n ]\n"
-read -p "Select: " REBOOT
-
-if [[ $REBOOT == "Y" || $REBOOT == "y" ]]; then
-    printf "${note} - Syste will reboot now..\n"
-    sleep 1
-    reboot
-else
-    exit 1
-fi
