@@ -16,14 +16,21 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-vs_code_dir=$HOME/.config/Code
-    if [ -f "$vs_code_dir" ]; then
-        printf "${action} - Backing up .config/Code directory\n"
-        mv $vs_code_dirS $vs_code_dir.backup
+vs_code_dir=~/.config/Code
+vs_code_plugins_dir=~/.vscode
+    if [ -d "$vs_code_dir" ]; then
+        printf "${action} - Backing up .config/Code directory...\n"
+        mv $vs_code_dir $vs_code_dir.backup
+    fi
+
+    if [ -d "$vs_code_plugins_dir" ]; then
+        printf "${action} - Backing up directory...\n"
+        mv $vs_code_plugins_dir $vs_code_plugins_dir.backup
     fi
     
 printf "${action} - Copying Code directory..."
 cp -r extras/Code ~/.config/
+cp -r extras/.vscode ~/
 sleep 1
 
 printf "${done} - Vs Code themes and some plugins have been copied...\n"
