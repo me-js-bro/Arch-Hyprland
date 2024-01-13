@@ -19,25 +19,22 @@ done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
 # Install THEME
-
-THEME_LIGHT=./extras/themes/theme-light
-THEME_DARK=./extras/themes/theme
-KVANTUM=./extras/Kvantum
 CONFIG_DIR=$HOME/.config
+THEME=./extras/themes/themes.tar.gz
+KVANTUM=./extras/Kvantum
 ICON=./extras/Icon_TelaDracula.tar.gz
 CURSOR=./extras/Nordzy-cursors.tar.gz
-GTK=./extras/gtk-3.0
+GTK3=./extras/gtk-3.0
+GTK4=./extras/gtk-4.0
 QT5CT=./extras/qt5ct
 
-for THEME in $THEME_DARK $THEME_LIGHT; do
-    mkdir -p ~/.themes
-    THEME_DIR=~/.themes
-    printf "${action} - Copying themes\n"
-    cp -r $THEME $THEME_DIR/
 
+# copy theme to .themes
+mkdir -p ~/.themes
+THEME_DIR=~/.themes
+printf "${action} - Copying themes\n"
+cp -r $THEME $THEME_DIR/
 
-
-done
 
 QT5CT_DIR=~/.config/qt5ct
 if [ -d $QT5CT_DIR ]; then
@@ -54,6 +51,7 @@ if [ -d $KVANTUM_DIR ]; then
     mv $KVANTUM_DIR "$KVANTUM_DIR-back"
 fi
 sleep 1
+
 cp -r $KVANTUM ~/.config/
 printf "${done} - Copying Kvantum themes done..."
 
@@ -61,10 +59,16 @@ mkdir -p ~/.icons
 cp -r $ICON ~/.icons
 cp -r $CURSOR ~/.icons
 
-GTK_DIR=~/.config/gtk-3.0
-if [ -d $GTK_DIR ]; then
-    mv $GTK_DIR "$GTK_DIR-back"
-    cp -r $GTK ~/.config/
+GTK3_DIR=~/.config/gtk-3.0
+if [ -d $GTK3_DIR ]; then
+    mv $GTK3_DIR "$GTK3_DIR-back"
+    cp -r $GTK3 ~/.config/
+fi
+
+GTK4_DIR=~/.config/gtk-4.0
+if [ -d $GTK4_DIR ]; then
+    mv $GTK4_DIR "$GTK4_DIR-back"
+    cp -r $GTK4 ~/.config/
 fi
 
 file_dir=/etc/environment
@@ -73,4 +77,21 @@ sudo sh -c "echo \"QT_QPA_PLATFORMTHEME='qt5ct'\" >> $file_dir"
 cd ~/.icons
 tar xf Nordzy-cursors.tar.gz
 tar xf Icon_TelaDracula.tar.gz
+
+cd ~/.themes
+tar xf themes.tar.gz
+cd themes
+mv theme theme-light ~/.themes/
+
+printf "${done} - installation completed, would you like to rebooting your system...[ y/n ]\n"
+read -p "Select: " REBOOT
+
+if [[ $REBOOT == "Y" || $REBOOT == "y" ]]; then
+    printf "${note} - Syste will reboot now..\n"
+    sleep 1
+    reboot
+else
+    exit 1
+fi
+
 

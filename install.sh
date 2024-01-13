@@ -94,6 +94,7 @@ else
 
     # Installing AUR Helper
     aur_dir="$install_script_dir/aur_helper"
+    chmod +x $aur_dir/*
     if [[ $AUR_HELPER == "1" ]]; then
         "$aur_dir/yay.sh"
 
@@ -101,7 +102,7 @@ else
         "$aur_dir/paru.sh"
 
     else
-        printf "${error} - Invalid option,, Exiting script. Please re-execute the script and select between [ 1/2 ]\n" 2>&1 | tee -a "$log"
+        printf "${error} - Invalid option for aur helper. Exiting the script. Please re-execute the script and select between [ 1/2 ]\n" 2>&1 | tee -a "$log"
         sleep 2
         exit 1
     fi

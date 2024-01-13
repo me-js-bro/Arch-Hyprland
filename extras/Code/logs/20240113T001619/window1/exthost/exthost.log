@@ -1,0 +1,68 @@
+2024-01-13 00:16:20.818 [info] Extension host with pid 4547 started
+2024-01-13 00:16:20.818 [info] Skipping acquiring lock for /home/mahin/.config/Code/User/workspaceStorage/5e9ef66107dad893074027be510e528e.
+2024-01-13 00:16:20.854 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-01-13 00:16:20.858 [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag, startup: true, activationEvent: '*'
+2024-01-13 00:16:20.907 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-01-13 00:16:20.940 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-01-13 00:16:21.165 [info] Eager extensions activated
+2024-01-13 00:16:21.247 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:16:21.255 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:16:21.272 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:16:21.291 [info] ExtensionService#_doActivateExtension bradlc.vscode-tailwindcss, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:16:21.328 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:16:21.405 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2024-01-13 00:16:32.635 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2024-01-13 00:16:32.644 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-01-13 00:19:46.404 [error] Error: spawn git ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:283:19)
+    at onErrorNT (node:internal/child_process:476:16)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-01-13 00:19:47.405 [error] Error: spawn git ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:283:19)
+    at onErrorNT (node:internal/child_process:476:16)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-01-13 00:20:03.360 [info] Extension host terminating: renderer closed the MessagePort
+2024-01-13 00:20:03.376 [info] Extension host with pid 4547 exiting with code 0
+2024-01-13 00:20:04.181 [info] Extension host with pid 5380 started
+2024-01-13 00:20:04.209 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-01-13 00:20:04.216 [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag, startup: true, activationEvent: '*'
+2024-01-13 00:20:04.262 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-01-13 00:20:04.281 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-01-13 00:20:04.397 [info] Eager extensions activated
+2024-01-13 00:20:04.430 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:20:04.431 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:20:04.436 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:20:04.439 [info] ExtensionService#_doActivateExtension bradlc.vscode-tailwindcss, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:20:04.450 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2024-01-13 00:20:04.471 [info] Extension host terminating: renderer closed the MessagePort
+2024-01-13 00:20:04.515 [error] ProxyResolver#addCertificatesV1 Canceled: Canceled
+    at new g (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:141:110274)
+    at l.U (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:10866)
+    at Proxy.P.<computed>.j.charCodeAt.P.<computed> (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:8317)
+    at A.loadCertificates (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:151:39023)
+    at Object.loadAdditionalCertificates (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:133:34240)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:475:53
+    at Generator.next (<anonymous>)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:35:71
+    at new Promise (<anonymous>)
+    at __awaiter (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:31:12)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:474:43
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:476:16
+    at Generator.next (<anonymous>)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:35:71
+    at new Promise (<anonymous>)
+    at __awaiter (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:31:12)
+    at getOrLoadAdditionalCertificates (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:472:12)
+    at addCertificatesV1 (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:456:9)
+    at resolveProxy (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:112:9)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:303:77
+    at new Promise (<anonymous>)
+    at _PacProxyAgent.resolveP (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/index.js:303:54)
+    at _PacProxyAgent.<anonymous> (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/agent.js:70:37)
+    at Generator.next (<anonymous>)
+    at /usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/agent.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/agent.js:4:12)
+    at _PacProxyAgent.connect (/usr/share/code/resources/app/node_modules.asar/@vscode/proxy-agent/out/agent.js:52:16)
+    at /usr/share/code/resources/app/node_modules.asar/agent-base/dist/index.js:73:30
+2024-01-13 00:20:04.515 [info] Extension host with pid 5380 exiting with code 0

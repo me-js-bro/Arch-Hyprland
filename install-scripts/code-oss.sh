@@ -16,10 +16,16 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-VS_CODE_SETTINGS=$HOME/.config/Code/User/settings.json
-    if [ -f "$VS_CODE_SETTINGS" ]; then
-        printf "${action} - Backing up settings.json for vs-code\n"
-        mv $VS_CODE_SETTINGS $VS_CODE_SETTINGS.backup
+vs_code_dir=$HOME/.config/Code
+    if [ -f "$vs_code_dir" ]; then
+        printf "${action} - Backing up .config/Code directory\n"
+        mv $vs_code_dirS $vs_code_dir.backup
     fi
-printf "${action} - Copying Vs-Code theme...\n"
-cp -r 'extras/settings.json' "$HOME/.config/Code/User/"
+    
+printf "${action} - Copying Code directory..."
+cp -r extras/Code ~/.config/
+sleep 1
+
+printf "${done} - Vs Code themes and some plugins have been copied...\n"
+
+clear

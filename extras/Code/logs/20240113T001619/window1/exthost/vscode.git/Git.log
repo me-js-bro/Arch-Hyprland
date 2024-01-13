@@ -1,0 +1,30 @@
+2024-01-13 00:16:21.077 [info] Log level: Info
+2024-01-13 00:16:21.077 [info] Validating found git in: "git"
+2024-01-13 00:16:21.077 [info] Using git "2.43.0" from "git"
+2024-01-13 00:16:21.077 [info] > git rev-parse --show-toplevel [2ms]
+2024-01-13 00:16:21.077 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-01-13 00:16:21.077 [info] Open repository: /media/main/Code/all git-clones/Arch-HyprV1
+2024-01-13 00:16:21.079 [info] > git rev-parse --show-toplevel [3ms]
+2024-01-13 00:16:21.080 [info] > git config --get commit.template [10ms]
+2024-01-13 00:16:21.097 [info] > git rev-parse --show-toplevel [11ms]
+2024-01-13 00:16:21.108 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [13ms]
+2024-01-13 00:16:21.109 [info] > git rev-parse --show-toplevel [2ms]
+2024-01-13 00:16:21.168 [info] > git status -z -uall [49ms]
+2024-01-13 00:16:21.220 [info] > git config --get commit.template [21ms]
+2024-01-13 00:16:21.224 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [6ms]
+2024-01-13 00:16:21.314 [info] > git status -z -uall [70ms]
+2024-01-13 00:16:21.607 [info] > git check-ignore -v -z --stdin [10ms]
+2024-01-13 00:16:23.317 [info] > git config --get commit.template [2ms]
+2024-01-13 00:16:23.325 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [1ms]
+2024-01-13 00:16:23.335 [info] > git status -z -uall [5ms]
+2024-01-13 00:16:30.518 [info] > git check-ignore -v -z --stdin [1ms]
+2024-01-13 00:16:32.815 [info] > git show --textconv :install.sh [7ms]
+2024-01-13 00:16:32.817 [info] > git ls-files --stage -- /media/main/Code/all git-clones/Arch-HyprV1/install.sh [3ms]
+2024-01-13 00:16:32.823 [info] > git cat-file -s 6a4af403a9cf9ee140629f3527584c490846654a [1ms]
+2024-01-13 00:20:00.276 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/HEAD'
+2024-01-13 00:20:00.297 [warning] getRemotes() - ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/config'
+2024-01-13 00:20:00.315 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/HEAD'
+2024-01-13 00:20:00.334 [warning] getRemotes() - ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/config'
+2024-01-13 00:20:04.331 [info] Log level: Info
+2024-01-13 00:20:04.331 [info] Validating found git in: "git"
+2024-01-13 00:20:04.331 [info] Using git "2.43.0" from "git"

@@ -1,0 +1,12 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Theme Flat",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 22,
+    "editor.mouseWheelZoom": true,
+    "editor.cursorBlinking": "expand",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontSize": 18,
+    "editor.fontFamily": "'Jetbrains Mono','Droid Sans Mono', 'monospace', monospace"
+}

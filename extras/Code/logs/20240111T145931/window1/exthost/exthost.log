@@ -1,0 +1,4 @@
+2024-01-11 14:59:33.499 [info] Extension host with pid 21048 started
+2024-01-11 14:59:33.500 [info] Skipping acquiring lock for /home/mahin/.config/Code/User/workspaceStorage/0189459d407acd98e7c3b3bb62af50e0.
+2024-01-11 14:59:33.843 [info] Extension host terminating: renderer closed the MessagePort
+2024-01-11 14:59:33.848 [info] Extension host with pid 21048 exiting with code 0
