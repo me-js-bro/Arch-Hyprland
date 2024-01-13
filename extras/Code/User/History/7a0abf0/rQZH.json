@@ -1,0 +1,9 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Theme Flat",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 20,
+    "editor.mouseWheelZoom": true,
+    "editor.cursorBlinking": "expand"
+}

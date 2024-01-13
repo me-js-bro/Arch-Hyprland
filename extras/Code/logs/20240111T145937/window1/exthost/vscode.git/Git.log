@@ -1,0 +1,96 @@
+2024-01-11 14:59:41.829 [info] Log level: Info
+2024-01-11 14:59:41.829 [info] Validating found git in: "git"
+2024-01-11 14:59:41.829 [info] Using git "2.43.0" from "git"
+2024-01-11 14:59:41.829 [info] > git rev-parse --show-toplevel [6ms]
+2024-01-11 14:59:41.829 [info] > git rev-parse --git-dir --git-common-dir [12ms]
+2024-01-11 14:59:41.829 [info] Open repository: /home/mahin/Scripts/zsh-installation
+2024-01-11 14:59:41.886 [info] > git rev-parse --show-toplevel [3ms]
+2024-01-11 14:59:41.891 [info] > git config --get commit.template [28ms]
+2024-01-11 14:59:42.121 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-01-11 14:59:42.199 [info] > git status -z -uall [9ms]
+2024-01-11 14:59:42.255 [info] > git config --get commit.template [19ms]
+2024-01-11 14:59:42.282 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [29ms]
+2024-01-11 14:59:42.490 [info] > git check-ignore -v -z --stdin [111ms]
+2024-01-11 14:59:42.497 [info] > git status -z -uall [23ms]
+2024-01-11 14:59:43.105 [info] > git show --textconv :install-zsh.sh [20ms]
+2024-01-11 14:59:43.114 [info] > git ls-files --stage -- /home/mahin/Scripts/zsh-installation/install-zsh.sh [13ms]
+2024-01-11 14:59:43.131 [info] > git cat-file -s 335b8e53f9bf74e98ab602e7a737b86f7e2b6cca [6ms]
+2024-01-11 15:00:25.223 [info] Log level: Info
+2024-01-11 15:00:25.223 [info] Validating found git in: "git"
+2024-01-11 15:00:25.223 [info] Using git "2.43.0" from "git"
+2024-01-11 15:00:35.821 [info] Log level: Info
+2024-01-11 15:00:35.821 [info] Validating found git in: "git"
+2024-01-11 15:00:35.821 [info] Using git "2.43.0" from "git"
+2024-01-11 15:00:35.821 [info] > git rev-parse --show-toplevel [25ms]
+2024-01-11 15:00:35.821 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:35.861 [info] > git rev-parse --show-toplevel [12ms]
+2024-01-11 15:00:35.861 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:35.900 [info] > git rev-parse --show-toplevel [9ms]
+2024-01-11 15:00:35.900 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:35.929 [info] > git rev-parse --show-toplevel [4ms]
+2024-01-11 15:00:35.929 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:36.067 [info] > git rev-parse --show-toplevel [9ms]
+2024-01-11 15:00:36.067 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:36.196 [info] > git rev-parse --show-toplevel [1ms]
+2024-01-11 15:00:36.196 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:36.354 [info] > git rev-parse --show-toplevel [21ms]
+2024-01-11 15:00:36.355 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:00:36.674 [info] > git rev-parse --show-toplevel [4ms]
+2024-01-11 15:00:36.675 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-11 15:01:20.499 [info] > git rev-parse --show-toplevel [7ms]
+2024-01-11 15:01:20.521 [info] > git rev-parse --git-dir --git-common-dir [3ms]
+2024-01-11 15:01:20.552 [info] Open repository: /media/main/Code/zsh-installation
+2024-01-11 15:01:20.572 [info] > git config --get commit.template [4ms]
+2024-01-11 15:01:20.580 [info] No remotes found in the git config file.
+2024-01-11 15:01:20.580 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2024-01-11 15:01:20.588 [info] > git status -z -uall [3ms]
+2024-01-11 15:01:20.625 [info] > git config --get commit.template [4ms]
+2024-01-11 15:01:20.652 [info] No remotes found in the git config file.
+2024-01-11 15:01:20.682 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [31ms]
+2024-01-11 15:01:20.705 [info] > git status -z -uall [10ms]
+2024-01-11 15:01:20.923 [info] > git show --textconv :install-zsh.sh [7ms]
+2024-01-11 15:01:20.929 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [7ms]
+2024-01-11 15:01:21.095 [info] > git check-ignore -v -z --stdin [5ms]
+2024-01-11 15:01:21.943 [info] No remotes found in the git config file.
+2024-01-11 15:01:21.944 [info] > git config --get commit.template [5ms]
+2024-01-11 15:01:21.945 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2024-01-11 15:01:21.955 [info] > git status -z -uall [4ms]
+2024-01-11 15:01:22.037 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [1ms]
+2024-01-11 15:01:22.043 [info] > git show --textconv :install-zsh.sh [1ms]
+2024-01-11 15:01:24.595 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [8ms]
+2024-01-11 15:01:24.620 [info] > git cat-file -s eb381cdd2e3e51963b6a58bafa003b4b0620b0a7 [4ms]
+2024-01-11 15:01:24.650 [info] > git show --textconv :install-zsh.sh [6ms]
+2024-01-11 15:01:26.997 [info] No remotes found in the git config file.
+2024-01-11 15:01:27.000 [info] > git config --get commit.template [22ms]
+2024-01-11 15:01:27.001 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2024-01-11 15:01:27.025 [info] > git status -z -uall [6ms]
+2024-01-11 15:01:34.438 [info] No remotes found in the git config file.
+2024-01-11 15:01:34.439 [info] > git config --get commit.template [15ms]
+2024-01-11 15:01:34.441 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-01-11 15:01:34.462 [info] > git status -z -uall [6ms]
+2024-01-11 15:01:34.549 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [6ms]
+2024-01-11 15:01:34.572 [info] > git cat-file -s eb381cdd2e3e51963b6a58bafa003b4b0620b0a7 [6ms]
+2024-01-11 15:01:34.607 [info] > git show --textconv :install-zsh.sh [3ms]
+2024-01-11 15:03:11.696 [info] > git config --get commit.template [19ms]
+2024-01-11 15:03:11.697 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-01-11 15:03:11.705 [info] > git status -z -uall [1ms]
+2024-01-11 15:03:11.761 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [1ms]
+2024-01-11 15:03:11.766 [info] > git cat-file -s eb381cdd2e3e51963b6a58bafa003b4b0620b0a7 [1ms]
+2024-01-11 15:03:11.773 [info] > git show --textconv :install-zsh.sh [1ms]
+2024-01-11 15:03:49.795 [info] > git config --get commit.template [20ms]
+2024-01-11 15:03:49.796 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2024-01-11 15:03:49.816 [info] > git status -z -uall [3ms]
+2024-01-11 15:03:49.866 [info] > git ls-files --stage -- /media/main/Code/zsh-installation/install-zsh.sh [1ms]
+2024-01-11 15:03:49.873 [info] > git cat-file -s eb381cdd2e3e51963b6a58bafa003b4b0620b0a7 [2ms]
+2024-01-11 15:03:49.881 [info] > git show --textconv :install-zsh.sh [1ms]
+2024-01-11 15:05:00.859 [info] Log level: Info
+2024-01-11 15:05:00.859 [info] Validating found git in: "git"
+2024-01-11 15:05:00.859 [info] Using git "2.43.0" from "git"

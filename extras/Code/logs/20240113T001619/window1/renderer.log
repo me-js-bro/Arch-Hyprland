@@ -1,0 +1,16 @@
+2024-01-13 00:16:20.134 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-01-13 00:16:20.525 [info] Started local extension host with pid 4547.
+2024-01-13 00:16:23.643 [info] [perf] Render performance baseline is 40ms
+2024-01-13 00:19:46.405 [error] [Extension Host] Error: spawn git ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:283:19)
+    at onErrorNT (node:internal/child_process:476:16)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-01-13 00:19:46.406 [error] [Extension Host] Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/share/code/resources/app/out/bootstrap.js:1:471)
+    at process.emit (node:events:513:28)
+2024-01-13 00:19:47.407 [error] spawn git ENOENT: Error: spawn git ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:283:19)
+    at onErrorNT (node:internal/child_process:476:16)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-01-13 00:20:03.650 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-01-13 00:20:03.864 [info] Started local extension host with pid 5380.

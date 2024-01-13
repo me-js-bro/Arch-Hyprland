@@ -1,0 +1,88 @@
+2024-01-12 18:31:25.053 [info] Log level: Info
+2024-01-12 18:31:25.053 [info] Validating found git in: "git"
+2024-01-12 18:31:25.053 [info] Using git "2.43.0" from "git"
+2024-01-12 18:31:25.053 [info] > git rev-parse --show-toplevel [7ms]
+2024-01-12 18:31:25.053 [info] fatal: not a git repository (or any parent up to mount point /media)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-01-12 18:31:25.053 [info] > git rev-parse --show-toplevel [2ms]
+2024-01-12 18:31:25.054 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-01-12 18:31:25.069 [info] Open repository: /media/main/Code/all git-clones/Arch-HyprV1
+2024-01-12 18:31:25.087 [info] > git rev-parse --show-toplevel [4ms]
+2024-01-12 18:31:25.087 [info] > git config --get commit.template [12ms]
+2024-01-12 18:31:25.097 [info] > git rev-parse --git-dir --git-common-dir [5ms]
+2024-01-12 18:31:25.100 [info] Open repository: /media/main/Code/all git-clones/me-js-bro
+2024-01-12 18:31:25.106 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [11ms]
+2024-01-12 18:31:25.111 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/main'
+2024-01-12 18:31:25.111 [info] > git config --get commit.template [6ms]
+2024-01-12 18:31:25.112 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2024-01-12 18:31:25.122 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-01-12 18:31:25.128 [info] > git status -z -uall [1ms]
+2024-01-12 18:31:25.139 [info] > git config --get commit.template [1ms]
+2024-01-12 18:31:25.158 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [15ms]
+2024-01-12 18:31:25.181 [info] > git status -z -uall [2ms]
+2024-01-12 18:31:25.196 [info] > git status -z -uall [80ms]
+2024-01-12 18:31:25.207 [info] > git config --get commit.template [1ms]
+2024-01-12 18:31:25.212 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-01-12 18:31:25.216 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/main'
+2024-01-12 18:31:25.217 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-01-12 18:31:25.288 [info] > git status -z -uall [67ms]
+2024-01-12 18:31:25.623 [info] > git check-ignore -v -z --stdin [6ms]
+2024-01-12 18:31:25.624 [info] > git check-ignore -v -z --stdin [2ms]
+2024-01-12 18:32:47.891 [info] Log level: Info
+2024-01-12 18:32:47.891 [info] Validating found git in: "git"
+2024-01-12 18:32:47.891 [info] Using git "2.43.0" from "git"
+2024-01-12 18:33:00.051 [info] Log level: Info
+2024-01-12 18:33:00.051 [info] Validating found git in: "git"
+2024-01-12 18:33:00.051 [info] Using git "2.43.0" from "git"
+2024-01-12 18:33:00.051 [info] > git rev-parse --show-toplevel [8ms]
+2024-01-12 18:33:00.061 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-01-12 18:33:00.077 [info] Open repository: /media/main/Code/all git-clones/Arch-HyprV1
+2024-01-12 18:33:00.102 [info] > git rev-parse --show-toplevel [5ms]
+2024-01-12 18:33:00.104 [info] > git config --get commit.template [11ms]
+2024-01-12 18:33:00.131 [info] > git rev-parse --show-toplevel [12ms]
+2024-01-12 18:33:00.133 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-01-12 18:33:00.150 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/main'
+2024-01-12 18:33:00.154 [info] > git rev-parse --show-toplevel [13ms]
+2024-01-12 18:33:00.157 [info] > git rev-parse refs/remotes/origin/main [7ms]
+2024-01-12 18:33:00.288 [info] > git status -z -uall [124ms]
+2024-01-12 18:33:00.302 [info] > git config --get commit.template [2ms]
+2024-01-12 18:33:00.324 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-01-12 18:33:00.343 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/main'
+2024-01-12 18:33:00.350 [info] > git rev-parse refs/remotes/origin/main [7ms]
+2024-01-12 18:33:00.438 [info] > git status -z -uall [77ms]
+2024-01-12 18:33:00.607 [info] > git check-ignore -v -z --stdin [1ms]
+2024-01-12 18:33:04.655 [info] > git config --get commit.template [18ms]
+2024-01-12 18:33:04.657 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2024-01-12 18:33:04.671 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/main'
+2024-01-12 18:33:04.675 [info] > git rev-parse refs/remotes/origin/main [4ms]
+2024-01-12 18:33:04.771 [info] > git status -z -uall [84ms]
+2024-01-12 18:33:09.811 [info] > git config --get commit.template [18ms]
+2024-01-12 18:33:09.812 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [4ms]
+2024-01-12 18:33:09.826 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/development'
+2024-01-12 18:33:09.830 [info] > git rev-parse refs/remotes/origin/development [4ms]
+2024-01-12 18:33:09.852 [info] > git status -z -uall [9ms]
+2024-01-12 18:33:12.336 [info] > git show --textconv :install.sh [10ms]
+2024-01-12 18:33:12.338 [info] > git ls-files --stage -- /media/main/Code/all git-clones/Arch-HyprV1/install.sh [4ms]
+2024-01-12 18:33:12.351 [info] > git cat-file -s 6a4af403a9cf9ee140629f3527584c490846654a [2ms]
+2024-01-12 18:33:26.531 [info] > git check-ignore -v -z --stdin [3ms]
+2024-01-12 18:33:30.846 [info] > git show --textconv :extras/.zshrc [16ms]
+2024-01-12 18:33:30.847 [info] > git ls-files --stage -- /media/main/Code/all git-clones/Arch-HyprV1/extras/.zshrc [2ms]
+2024-01-12 18:33:30.859 [info] > git cat-file -s 748482436743ea0acbbb82f533c5b5de58cd7ddf [2ms]
+2024-01-12 18:33:36.819 [info] > git config --get commit.template [5ms]
+2024-01-12 18:33:36.819 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [1ms]
+2024-01-12 18:33:36.823 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/development'
+2024-01-12 18:33:36.824 [info] > git rev-parse refs/remotes/origin/development [1ms]
+2024-01-12 18:33:36.831 [info] > git status -z -uall [3ms]
+2024-01-12 18:34:45.868 [info] > git config --get commit.template [17ms]
+2024-01-12 18:34:45.871 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [5ms]
+2024-01-12 18:34:45.880 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/development'
+2024-01-12 18:34:45.881 [info] > git rev-parse refs/remotes/origin/development [1ms]
+2024-01-12 18:34:45.893 [info] > git status -z -uall [3ms]
+2024-01-12 18:34:51.503 [info] > git config --get commit.template [7ms]
+2024-01-12 18:34:51.504 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [2ms]
+2024-01-12 18:34:51.510 [warning] ENOENT: no such file or directory, open '/media/main/Code/all git-clones/Arch-HyprV1/.git/refs/remotes/origin/development'
+2024-01-12 18:34:51.511 [info] > git rev-parse refs/remotes/origin/development [1ms]
+2024-01-12 18:34:51.521 [info] > git status -z -uall [4ms]
+2024-01-12 18:35:11.273 [info] > git config --get commit.template [3ms]
+2024-01-12 18:35:11.291 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/development refs/remotes/development [4ms]
+2024-01-12 18:35:11.318 [info] > git status -z -uall [11ms]
