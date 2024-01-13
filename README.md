@@ -7,8 +7,8 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/md-mahin-islam-mahi/HyprV1?style=for-the-badge&color=b4befe) </br>
-![GitHub repo size](https://img.shields.io/github/repo-size/md-mahin-islam-mahi/HyprV1?style=for-the-badge&color=aba6f7)
+![GitHub last commit](https://img.shields.io/github/last-commit/me-js-bro/Arch-HyprV1?style=for-the-badge&color=b4befe) </br>
+![GitHub repo size](https://img.shields.io/github/repo-size/me-js-bro/Arch-HyprV1?style=for-the-badge&color=aba6f7)
 
 </br>
 </div>

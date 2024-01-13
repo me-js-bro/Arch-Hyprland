@@ -21,6 +21,7 @@ vs_code_dir=$HOME/.config/Code
         printf "${action} - Backing up .config/Code directory\n"
         mv $vs_code_dirS $vs_code_dir.backup
     fi
+    
 printf "${action} - Copying Code directory..."
 cp -r extras/Code ~/.config/
 sleep 1

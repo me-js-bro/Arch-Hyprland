@@ -27,17 +27,17 @@ printf " \n"
 printf " \n"
 printf " \n"
 
-printf "${cyan}______________________________________________________________________________${end}\n"
+printf "${cyan}         _______________________________________________________________________________________${end}\n"
 printf " \n"
-printf "            ||\      //|        //\        ||         |  ()  ||\      | \n"
-printf "            || \    // |       //  \       ||         |  ||  || \     | \n"
-printf "            ||  \  //  |      //    \      ||         |  ||  ||  \    | \n"
-printf "            ||   \//   |     //      \     ||---------|  ||  ||   \   | \n"
-printf "            ||         |    //--------\    ||         |  ||  ||    \  | \n"
-printf "            ||         |   //          \   ||         |  ||  ||     \ | \n"
-printf "            ||         |  //            \  ||         |  ||  ||      \| \n"
+printf "                        ||\      //|        //\        ||         |  ()  ||\      | \n"
+printf "                        || \    // |       //  \       ||         |  ||  || \     | \n"
+printf "                        ||  \  //  |      //    \      ||         |  ||  ||  \    | \n"
+printf "                        ||   \//   |     //      \     ||---------|  ||  ||   \   | \n"
+printf "                        ||         |    //--------\    ||         |  ||  ||    \  | \n"
+printf "                        ||         |   //          \   ||         |  ||  ||     \ | \n"
+printf "                        ||         |  //            \  ||         |  ||  ||      \| \n"
 printf " \n"
-printf "${cyan}______________________________________________________________________________${end}\n"
+printf "${cyan}         _______________________________________________________________________________________${end}\n"
 
 printf " \n"
 printf " \n"
@@ -60,7 +60,7 @@ error="${red}[ ERROR ]${end}"
 
 # creating install log dir
     mkdir -p Install-Logs
-    log="Install-Logs/install-$(date +%d-%H%M%S).log"
+    log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p).log"
 
 
 ### Ask user for the confirmation...###
@@ -95,7 +95,6 @@ else
     # Installing AUR Helper
     aur_dir="$install_script_dir/aur_helper"
     chmod +x $aur_dir/*
-    
     if [[ $AUR_HELPER == "1" ]]; then
         "$aur_dir/yay.sh"
 
@@ -108,9 +107,8 @@ else
         exit 1
     fi
 fi
-fi
 
-#-------- Asking somd prompts --------#
+#-------- Asking some prompts --------#
 
 ## Install Packages
 printf "${note} - Would you like to install the packages? [ y/n ]\n"
