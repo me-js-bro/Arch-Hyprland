@@ -20,7 +20,7 @@ error="${red}[ ERROR ]${end}"
 
 # Install THEME
 CONFIG_DIR=$HOME/.config
-THEME=./extras/themes.tar.gz
+THEME=./extras/theme.tar.gz
 KVANTUM=./extras/Kvantum
 ICON=./extras/Icon_TelaDracula.tar.gz
 CURSOR=./extras/Nordzy-cursors.tar.gz
@@ -79,8 +79,8 @@ tar xf Nordzy-cursors.tar.gz
 tar xf Icon_TelaDracula.tar.gz
 
 cd ~/.themes
-tar xf themes.tar.gz
-rm -rm themes.tar.gz
+tar xf theme.tar.gz
+rm -rm theme.tar.gz
 
 printf "${done} - Themes copied successfully...\n" && sleep 1
 
