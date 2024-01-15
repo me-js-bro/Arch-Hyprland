@@ -26,6 +26,7 @@ hyprland
 xdg-desktop-portal-hyprland
 dunst
 kitty
+alacritty
 waybar
 wofi
 wget

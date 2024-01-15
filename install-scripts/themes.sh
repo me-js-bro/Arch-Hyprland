@@ -20,7 +20,7 @@ error="${red}[ ERROR ]${end}"
 
 # Install THEME
 CONFIG_DIR=$HOME/.config
-THEME=./extras/themes/themes.tar.gz
+THEME=./extras/themes.tar.gz
 KVANTUM=./extras/Kvantum
 ICON=./extras/Icon_TelaDracula.tar.gz
 CURSOR=./extras/Nordzy-cursors.tar.gz
@@ -32,7 +32,7 @@ QT5CT=./extras/qt5ct
 # copy theme to .themes
 mkdir -p ~/.themes
 THEME_DIR=~/.themes
-printf "${action} - Copying themes\n"
+printf "${action} - Copying themes\n" && sleep 1
 cp -r $THEME $THEME_DIR/
 
 
@@ -80,18 +80,10 @@ tar xf Icon_TelaDracula.tar.gz
 
 cd ~/.themes
 tar xf themes.tar.gz
-cd themes
-mv theme theme-light ~/.themes/
+rm -rm themes.tar.gz
 
-printf "${done} - installation completed, would you like to rebooting your system...[ y/n ]\n"
-read -p "Select: " REBOOT
+printf "${done} - Themes copied successfully...\n" && sleep 1
 
-if [[ $REBOOT == "Y" || $REBOOT == "y" ]]; then
-    printf "${note} - Syste will reboot now..\n"
-    sleep 1
-    reboot
-else
-    exit 1
-fi
+clear
 
 

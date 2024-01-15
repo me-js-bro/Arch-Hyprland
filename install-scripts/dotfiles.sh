@@ -18,6 +18,11 @@ error="${red}[ ERROR ]${end}"
 
 log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_dotfiles.log"
 
+printf "${note} - Please choose your distro to config the ${green}Neofetch${end}...\nArch: ( A/a )\nFedora: ( F/f )\n"
+    read -p "Select: " distro
+
+    sleep 1
+
 
 mkdir -p ~/.config
 
@@ -42,21 +47,36 @@ mkdir -p ~/.config
     mv ~/.config/hypr ~/.config/hypr-backup
     fi
 
-    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr 2>&1
+    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr 2>&1 | tee -a "$log" && sleep 1
 
 
-    cp -r "$dotfiles_dir" "$HOME/.config/"
+    if [ -d "$hypr_dir" ]; then
+        ln -sf ~/.config/hypr/kitty ~/.config/kitty
+        ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
+        ln -sf ~/.config/hypr/cava ~/.config/cava
+        ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
+        ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
+        ln -sf ~/.config/hypr/waybar ~/.config/waybar
+        ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
+        ln -sf ~/.config/hypr/wofi ~/.config/wofi
+        ln -sf ~/.config/hypr/dunst ~/.config/dunst
+        sleep 1
 
-    ln -sf ~/.config/hypr/kitty ~/.config/kitty
-    ln -sf ~/.config/hypr/cava ~/.config/cava
-    ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
-    ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
-    ln -sf ~/.config/hypr/waybar ~/.config/waybar
-    ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
-    ln -sf ~/.config/hypr/wofi ~/.config/wofi
-    ln -sf ~/.config/hypr/dunst ~/.config/dunst
-    sleep 1
-    printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
+        case "$distro" in
+            A|a) 
+                sed -i 's/ascii_distro="auto"/ascii_distro="arch_small"/g' ~/.config/hypr/neofetch/config.conf
+                ;;
+            F|f)
+                sed -i 's/ascii_distro="auto"/ascii_distro="fedora_small"/g' ~/.config/hypr/neofetch/config.conf
+                ;;
+            *) printf "${error} - Please choose a valid option\n"
+        esac
+        sleep 1
+
+        printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
+    else 
+        printf "${error} -  Sorry, Maybe could not clone dotfiles from the github...\n" 2>&1 | tee -a "$log"
+    fi
 
 sleep 1
 
