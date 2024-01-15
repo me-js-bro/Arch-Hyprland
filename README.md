@@ -3,7 +3,6 @@
 <h2 align="center">Md. Mahin Islam Mahi</h2>
 </br>
 
-<p>This script is more cleaner version of the older one.</p>
 
 <div align="center">
 
@@ -12,8 +11,6 @@
 
 </br>
 </div>
-
-
 
 ## Screenshots
 
@@ -25,17 +22,19 @@
 
 ![App Screenshot](Screenshots/4.png)
 
+![App Screenshot](Screenshots/5.png)
+
 ### Main Components:
 
-- WM: [`Hyprland`](https://github.com/hyprwm/Hyprland) - install it while installing arch linux with `archinstall` script.
+- WM:[`Hyprland`](https://github.com/hyprwm/Hyprland) - install it while installing arch linux with `archinstall` script.
  
-- Terminal: [`Kitty`](https://github.com/kovidgoyal/kitty)
+- Terminal:[`Kitty`](https://github.com/kovidgoyal/kitty)
  
-- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
+- Status bar:[`Waybar`](https://github.com/Alexays/Waybar)
  
-- Menu: [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
+- Menu:[`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 
-- File Manager 2: [`Dolphin`](https://github.com/KDE/dolphin)
+- File Manager 2:[`Dolphin`](https://github.com/KDE/dolphin)
 
 ### [Note] This is the first time I am sharing my dotfiles. This one may be not the best config, but I personally love it.</br>
 
@@ -76,6 +75,72 @@ cd Arch-HyprV1
 chmod +x install.sh
 ./install.sh
 ```
+
+</br>
+<h1 align="center">Some of the key-bindings..</h1>
+</br>
+
+## The window button is the `Mod` button here
+## To open and close a window
+- `Mod + k:` Open Terminal (Alacritty)
+- `Mod + Shift + k:` Open Terminal (Kitty)
+- `Mod + b:` Open Browser (Firefox)
+- `Mod + Shift + b:` Open Browser (Brave) - If have installed
+- `Mod + e:` Open File Manager (Dolphin) - If have installed
+- `Mod + d:` Launch Wofi drun
+- `Mod + Shift + d:` Launch Wofi Emofi
+- `Mod + CTRL + d:` Launch Rofi drun
+- `Mod + CTRL + f:` Launch Rofi filebrowser
+- `Mod + x:` Launch Wlogout
+- `Mod + c:` Open Visuel Studio Code
+- `Mod + q:` Kill Active Window
+- `Mod + Shift + l`:Lock
+- `Mod + Shift + m:` Exit Hyprland
+</br>
+
+## Clipboard Manager
+- `Mod + ALT + c:` Clipboard History
+- `Mod + ALT + w:` Delete All Clipboard History
+</br>
+
+## Wallpaper changing and Taking Screenshot
+- `Mod + w:` Change wallpaper
+- `Mod + Shift + w:` Launch wofi to select wallpaper
+- `Print Screen:` Take Screenshot
+- `Mod + Print Screen:` Select Area For Screenshot
+</br>
+
+## Toggle window behaviour
+- `Mod + f:` Full Screen
+- `Mod + Shift + j:` Toggle Split
+- `Mod + v:` Toggle Float
+</br>
+
+## Move Window Focus
+- `Mod + l:` Move Focus to right
+- `Mod + j:` Move Focus to left
+- `Mod + u:` Move Focus to up
+- `Mod + m:` Move Focus to down
+</br>
+
+## Move Window
+- `Mod + CTRL + l:` Move Window to right
+- `Mod + CTRL + j:` Move Window to left
+- `Mod + CTRL + u:` Move Window to up
+- `Mod + CTRL + m:` Move Window to down
+</br>
+
+## Waybar click events...
+- `Ctrl + Exc:` Reload Waybar
+- `Click on the Arch Linux logo:` Open Wofi
+- `Click on updates:` Launch kitty && Update system
+- `Click on the circle icon:` toggle between dark and light theme
+- `Click right on volume controller:` Launch pavucontrol
+- `Hover on clock:` it shows the full calendar of the year
+- `Click on the power icon:` Lainch wlogout
+- `Click on the Clipboard icon:` Shows Clipboard History
+- `Right Click on the Clipboard icon:` Delets Clipboard History
+</br>
 
 ## After you have installed successfully, press ` Mod(Windows Button) + Shift + H ` to see the key bindings.
 
