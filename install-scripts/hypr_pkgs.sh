@@ -29,6 +29,7 @@ kitty
 alacritty
 waybar
 wofi
+cliphist
 wget
 dolphin
 swappy

@@ -31,6 +31,8 @@ qt5-svg
 qt5-quickcontrols2
 qt5-graphicaleffects
 grimblast
+rofi-lbonn-wayland
+wl-clipboard
 visual-studio-code-bin
     )
 
