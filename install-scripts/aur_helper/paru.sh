@@ -27,3 +27,5 @@ printf "${action} - Installing paru..\n"
         rm -rf ./paru
     
 printf "${done} - Aur Helper ${blue}paru ${end}installed successfully !\n" 
+
+clear

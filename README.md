@@ -26,15 +26,19 @@
 
 ### Main Components:
 
-- WM:[`Hyprland`](https://github.com/hyprwm/Hyprland) - install it while installing arch linux with `archinstall` script.
+- WM: [`Hyprland`](https://hyprland.org/)
  
-- Terminal:[`Kitty`](https://github.com/kovidgoyal/kitty)
- 
-- Status bar:[`Waybar`](https://github.com/Alexays/Waybar)
- 
-- Menu:[`Wofi`](https://hg.sr.ht/~scoopta/wofi)
+- Terminal-1: [`Alacritty`](https://alacritty.org/)
 
-- File Manager 2:[`Dolphin`](https://github.com/KDE/dolphin)
+- Terminal-2: [`Kitty`](https://sw.kovidgoyal.net/kitty/)
+ 
+- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
+ 
+- Menu-1: [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
+
+- Menu-2: [`Rofi`](https://github.com/davatorium/rofi)
+
+- File Manager: [`Dolphin`](https://github.com/KDE/dolphin)
 
 ### [Note] This is the first time I am sharing my dotfiles. This one may be not the best config, but I personally love it.</br>
 
@@ -55,20 +59,18 @@ As I use only a Desktop Pc, I don't have any laptop. That's why I could not test
 - `pamixer` - for volume control notification.
 - `fonts` - required awesome fonts. AUR and official repo have
 - `pipewire` - needed pipewire pipewire-pulse pipewire-alsa
-- `lxappearence` - for gtk themes
-- `kvantum` - for gtk themes
+- `nwg-look` - for gtk themes
+- `kvantum` - for qt5 themes
  </br>
 
 ### Themes (Optional):
-- I have used Nordic theme as the dark theme and Snow-v40 as the light theme `(For GTk Themes)` You can change themes using `lxappearance`.
+- I have used Nordic theme as the dark theme and Snow-v40 as the light theme `(For GTk Themes)` You can change themes using `nwg-look`.
 
-### Clone and Copy my dotfiles (inside your `/home` directory)
-After you have installed all the tools, now clone my dotfiles.
-
+### Clone this repository
 ```
 git clone https://github.com/me-js-bro/Arch-HyprV1.git
 ```
-Now run these commands
+ ### Now run these commands
 
 ```
 cd Arch-HyprV1

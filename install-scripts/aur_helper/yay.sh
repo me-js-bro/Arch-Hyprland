@@ -25,3 +25,5 @@ printf "${action} - Installing yay..\n" && sleep 1
         rm -rf ./yay
     
 printf "${done} - Aur Helper ${blue}yay ${end}installed successfully !\n" 
+
+clear
