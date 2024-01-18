@@ -2,23 +2,25 @@
     "userDataProfilesMigration": true,
     "profileAssociations": {
         "workspaces": {
-            "file:///media/main/Code/next-js-learning-journey/first-project%20%28Routing%29": "__default__profile__",
-            "file:///media/main/Code/from-fedora": "__default__profile__",
-            "file:///media/main/Code/all%20git-clones/HyprV1": "__default__profile__",
-            "file:///media/main/Code/portfolio-website": "__default__profile__",
-            "file:///home/mahin/.config/neofetch": "__default__profile__",
-            "file:///home/mahin/codes": "__default__profile__",
-            "file:///media/main/Code/all%20git-clones/me-js-bro": "__default__profile__",
-            "file:///home/mahin/HyprV1": "__default__profile__",
-            "file:///home/mahin/Scripts": "__default__profile__",
-            "file:///home/mahin/Scripts/install_rpm_fusion.sh": "__default__profile__",
-            "file:///home/mahin/Scripts/zsh-installation": "__default__profile__",
-            "file:///media/main/Code/zsh-installation": "__default__profile__",
-            "file:///media/main/Code/all%20git-clones": "__default__profile__",
-            "file:///media/main/Code/all%20git-clones/Arch-HyprV1": "__default__profile__"
+            "file:///home/mahin/Downloads/Arch-HyprV1/Install-Logs": "__default__profile__",
+            "file:///home/mahin/Downloads/Arch-HyprV1/install-scripts": "__default__profile__",
+            "file:///home/mahin/Downloads/Arch-HyprV1": "__default__profile__",
+            "file:///home/mahin/Temp/Hyprland-Dots": "__default__profile__",
+            "file:///home/mahin/scripts": "__default__profile__",
+            "file:///home/mahin/.config/alacritty": "__default__profile__",
+            "file:///home/mahin/Hyprland-Dots-01/.git": "__default__profile__",
+            "file:///home/mahin/.config/rofi": "__default__profile__",
+            "file:///main/Code/all%20git-clones/Hyprland-Dots": "__default__profile__",
+            "file:///home/mahin/.config/hypr/configs": "__default__profile__",
+            "file:///home/mahin/.config/hypr/rofi": "__default__profile__",
+            "file:///home/mahin/Arch-HyprV1/install-scripts": "__default__profile__",
+            "file:///home/mahin/Arch-HyprV1": "__default__profile__",
+            "file:///main/Code/all%20git-clones/Fedora-Hyprland": "__default__profile__",
+            "file:///home/mahin/.config/hypr": "__default__profile__",
+            "file:///home/mahin/Hyprland-Dots-01": "__default__profile__"
         },
         "emptyWindows": {
-            "1705120541758": "__default__profile__"
+            "1705560240740": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -26,10 +28,54 @@
     "telemetry.machineId": "d896a21bd55b819d78cd8a819cd6574723f0ec71a7c96317a00e5bde733d9d55",
     "backupWorkspaces": {
         "workspaces": [],
-        "folders": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/mahin/.config/hypr"
+            },
+            {
+                "folderUri": "file:///home/mahin/Hyprland-Dots-01"
+            }
+        ],
         "emptyWindows": [
             {
-                "backupFolder": "1705120541758"
+                "backupFolder": "1705560240740"
+            }
+        ]
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/mahin/.config/hypr",
+            "backupPath": "/home/mahin/.config/Code/Backups/8daed236ccc01d1348274c42421af387",
+            "uiState": {
+                "mode": 1,
+                "x": 12,
+                "y": 48,
+                "width": 941,
+                "height": 1020
+            }
+        },
+        "openedWindows": [
+            {
+                "folder": "file:///home/mahin/.config/hypr",
+                "backupPath": "/home/mahin/.config/Code/Backups/8daed236ccc01d1348274c42421af387",
+                "uiState": {
+                    "mode": 1,
+                    "x": 12,
+                    "y": 48,
+                    "width": 941,
+                    "height": 1020
+                }
+            },
+            {
+                "folder": "file:///home/mahin/Hyprland-Dots-01",
+                "backupPath": "/home/mahin/.config/Code/Backups/22e6c3a1e5b3f89a8669ccb1fc94fd28",
+                "uiState": {
+                    "mode": 1,
+                    "x": 967,
+                    "y": 48,
+                    "width": 941,
+                    "height": 1020
+                }
             }
         ]
     },
@@ -71,7 +117,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -80,136 +127,111 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///media/main/Code/all%20git-clones/Arch-HyprV1",
-                                        "path": "/media/main/Code/all git-clones/Arch-HyprV1",
+                                        "external": "file:///home/mahin/Hyprland-Dots-01",
+                                        "path": "/home/mahin/Hyprland-Dots-01",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/media/main/Code/all git-clones/Arch-HyprV1"
+                                    "label": "~/Hyprland-Dots-01"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///media/main/Code/all%20git-clones",
-                                        "path": "/media/main/Code/all git-clones",
+                                        "external": "file:///home/mahin/.config/hypr",
+                                        "path": "/home/mahin/.config/hypr",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/media/main/Code/all git-clones"
+                                    "label": "~/.config/hypr"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///media/main/Code/zsh-installation",
-                                        "path": "/media/main/Code/zsh-installation",
+                                        "external": "file:///main/Code/all%20git-clones/Fedora-Hyprland",
+                                        "path": "/main/Code/all git-clones/Fedora-Hyprland",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/media/main/Code/zsh-installation"
+                                    "label": "/main/Code/all git-clones/Fedora-Hyprland"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/Scripts/zsh-installation",
-                                        "path": "/home/mahin/Scripts/zsh-installation",
+                                        "external": "file:///home/mahin/Arch-HyprV1",
+                                        "path": "/home/mahin/Arch-HyprV1",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/Scripts/zsh-installation"
+                                    "label": "~/Arch-HyprV1"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/Scripts/install_rpm_fusion.sh",
-                                        "path": "/home/mahin/Scripts/install_rpm_fusion.sh",
+                                        "external": "file:///home/mahin/Arch-HyprV1/install-scripts",
+                                        "path": "/home/mahin/Arch-HyprV1/install-scripts",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/Scripts/install_rpm_fusion.sh"
+                                    "label": "~/Arch-HyprV1/install-scripts"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/Scripts",
-                                        "path": "/home/mahin/Scripts",
+                                        "external": "file:///home/mahin/.config/hypr/rofi",
+                                        "path": "/home/mahin/.config/hypr/rofi",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/Scripts"
+                                    "label": "~/.config/hypr/rofi"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/HyprV1",
-                                        "path": "/home/mahin/HyprV1",
+                                        "external": "file:///home/mahin/.config/hypr/configs",
+                                        "path": "/home/mahin/.config/hypr/configs",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/HyprV1"
+                                    "label": "~/.config/hypr/configs"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///media/main/Code/all%20git-clones/me-js-bro",
-                                        "path": "/media/main/Code/all git-clones/me-js-bro",
+                                        "external": "file:///main/Code/all%20git-clones/Hyprland-Dots",
+                                        "path": "/main/Code/all git-clones/Hyprland-Dots",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/media/main/Code/all git-clones/me-js-bro"
+                                    "label": "/main/Code/all git-clones/Hyprland-Dots"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/codes",
-                                        "path": "/home/mahin/codes",
+                                        "external": "file:///home/mahin/.config/rofi",
+                                        "path": "/home/mahin/.config/rofi",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/codes"
+                                    "label": "~/.config/rofi"
                                 },
                                 {
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/mahin/.config/neofetch",
-                                        "path": "/home/mahin/.config/neofetch",
+                                        "external": "file:///home/mahin/Hyprland-Dots-01/.git",
+                                        "path": "/home/mahin/Hyprland-Dots-01/.git",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/.config/neofetch"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/mahin/Scripts/install-zsh.sh",
-                                        "path": "/home/mahin/Scripts/install-zsh.sh",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/Scripts/install-zsh.sh"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/mahin/.config/neofetch/config.conf",
-                                        "path": "/home/mahin/.config/neofetch/config.conf",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/neofetch/config.conf"
+                                    "label": "~/Hyprland-Dots-01/.git"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -248,13 +270,11 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save",
-                        "enabled": false
+                        "label": "&&Save"
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As...",
-                        "enabled": false
+                        "label": "Save &&As..."
                     },
                     {
                         "id": "saveAll",
@@ -269,6 +289,13 @@
                         "label": "Share",
                         "submenu": {
                             "items": [
+                                {
+                                    "id": "github.copyVscodeDevLinkFile",
+                                    "label": "Copy vscode.dev Link"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
                                 {
                                     "id": "workbench.profiles.actions.exportProfile",
                                     "label": "Export Profile (Default)..."
@@ -398,13 +425,15 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File",
-                        "enabled": false
+                        "label": "Re&&vert File"
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor",
-                        "enabled": false
+                        "label": "&&Close Editor"
+                    },
+                    {
+                        "id": "workbench.action.closeFolder",
+                        "label": "Close &&Folder"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -449,13 +478,11 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find",
-                        "enabled": false
+                        "label": "&&Find"
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace",
-                        "enabled": false
+                        "label": "&&Replace"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -601,7 +628,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar"
+                                    "label": "&&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -733,8 +761,7 @@
                                 },
                                 {
                                     "id": "breadcrumbs.toggle",
-                                    "label": "&&Breadcrumbs",
-                                    "checked": true
+                                    "label": "&&Breadcrumbs"
                                 },
                                 {
                                     "id": "editor.action.toggleStickyScroll",
@@ -900,7 +927,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "enabled": false
+                        "checked": true
                     }
                 ]
             },
@@ -1233,8 +1260,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1429,6 +1455,10 @@
             "workbench.action.closeActiveEditor": {
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
+            },
+            "workbench.action.closeFolder": {
+                "label": "Ctrl+Alt+Delete",
+                "userSettingsLabel": "ctrl+alt+delete"
             },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",
@@ -1802,17 +1832,17 @@
         }
     },
     "theme": "vs-dark",
-    "themeBackground": "#2e3440",
+    "themeBackground": "#282c34",
     "windowSplash": {
         "zoomLevel": 0,
         "baseTheme": "vs-dark",
         "colorInfo": {
             "foreground": "#cccccc",
-            "background": "#2e3440",
-            "editorBackground": "#2e3440",
+            "background": "#282c34",
+            "editorBackground": "#282c34",
             "titleBarBackground": "#282c34",
-            "activityBarBackground": "#2e3440",
-            "sideBarBackground": "#2e3440",
+            "activityBarBackground": "#282c34",
+            "sideBarBackground": "#282c34",
             "statusBarBackground": "#282c34",
             "statusBarNoFolderBackground": "#282c34"
         },
@@ -1825,18 +1855,5 @@
             "statusBarHeight": 0,
             "windowBorder": false
         }
-    },
-    "windowsState": {
-        "lastActiveWindow": {
-            "backupPath": "/home/mahin/.config/Code/Backups/1705120541758",
-            "uiState": {
-                "mode": 0,
-                "x": 0,
-                "y": 66,
-                "width": 1920,
-                "height": 1014
-            }
-        },
-        "openedWindows": []
     }
 }

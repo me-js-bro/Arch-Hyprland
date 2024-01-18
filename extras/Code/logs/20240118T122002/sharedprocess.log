@@ -1,0 +1,14 @@
+2024-01-18 12:31:39.209 [info] Getting Manifest... akamud.vscode-theme-onelight
+2024-01-18 12:31:39.230 [info] Installing extension: akamud.vscode-theme-onelight
+2024-01-18 12:31:41.318 [warning] Extension signature verification failed with error 'UnknownError': akamud.vscode-theme-onelight
+2024-01-18 12:31:41.372 [info] Extracted extension to file:///home/mahin/.vscode/extensions/akamud.vscode-theme-onelight-2.3.0: akamud.vscode-theme-onelight
+2024-01-18 12:31:41.411 [info] Renamed to /home/mahin/.vscode/extensions/akamud.vscode-theme-onelight-2.3.0
+2024-01-18 12:31:41.422 [info] Extracting extension completed. akamud.vscode-theme-onelight
+2024-01-18 12:31:41.475 [info] Extension installed successfully: akamud.vscode-theme-onelight
+2024-01-18 12:31:41.525 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/mahin/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/mahin/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/opt/visual-studio-code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
