@@ -51,6 +51,20 @@ mkdir -p ~/.config
 
 
     if [ -d "$hypr_dir" ]; then
+
+        neofetch_file="$hypr_dir/neofetch"
+
+        case "$distro" in
+            A|a)
+                mv "$neofetch_file/arch-config.conf" "$neofetch_file/config.conf"
+                ;;
+            F|f)
+		        mv "$neofetch_file/fedora-config.conf" "$neofetch_file/config.conf"
+                ;;
+            *) printf "${error} - Please choose a valid option\n"
+        esac
+        sleep 1
+
         ln -sf ~/.config/hypr/kitty ~/.config/kitty
         ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
         ln -sf ~/.config/hypr/cava ~/.config/cava
@@ -60,17 +74,6 @@ mkdir -p ~/.config
         ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
         ln -sf ~/.config/hypr/wofi ~/.config/wofi
         ln -sf ~/.config/hypr/dunst ~/.config/dunst
-        sleep 1
-
-        case "$distro" in
-            A|a) 
-                sed -i 's/ascii_distro="auto"/ascii_distro="arch_small"/g' ~/.config/hypr/neofetch/config.conf
-                ;;
-            F|f)
-                sed -i 's/ascii_distro="auto"/ascii_distro="fedora_small"/g' ~/.config/hypr/neofetch/config.conf
-                ;;
-            *) printf "${error} - Please choose a valid option\n"
-        esac
         sleep 1
 
         printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
