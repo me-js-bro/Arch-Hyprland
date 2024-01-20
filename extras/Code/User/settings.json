@@ -3,7 +3,7 @@
     "files.autoSave": "afterDelay",
     "workbench.startupEditor": "none",
     "editor.fontSize": 20,
-    "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": true,
     // "workbench.colorCustomizations": {
     //     "editor.background": "#18202A",
@@ -33,5 +33,6 @@
     "workbench.colorTheme": "Theme Flat",
     "workbench.iconTheme": "material-icon-theme",
     "explorer.confirmDelete": false,
-    "editor.minimap.enabled": true
+    "editor.minimap.enabled": true,
+    "git.enableSmartCommit": true
 }

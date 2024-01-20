@@ -14,13 +14,13 @@
             "file:///home/mahin/.config/hypr/configs": "__default__profile__",
             "file:///home/mahin/.config/hypr/rofi": "__default__profile__",
             "file:///home/mahin/Arch-HyprV1/install-scripts": "__default__profile__",
-            "file:///home/mahin/Arch-HyprV1": "__default__profile__",
             "file:///main/Code/all%20git-clones/Fedora-Hyprland": "__default__profile__",
+            "file:///home/mahin/Arch-HyprV1": "__default__profile__",
             "file:///home/mahin/.config/hypr": "__default__profile__",
             "file:///home/mahin/Hyprland-Dots-01": "__default__profile__"
         },
         "emptyWindows": {
-            "1705560240740": "__default__profile__"
+            "1705737668448": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -30,54 +30,27 @@
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/mahin/.config/hypr"
-            },
-            {
                 "folderUri": "file:///home/mahin/Hyprland-Dots-01"
             }
         ],
         "emptyWindows": [
             {
-                "backupFolder": "1705560240740"
+                "backupFolder": "1705737668448"
             }
         ]
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/mahin/.config/hypr",
-            "backupPath": "/home/mahin/.config/Code/Backups/8daed236ccc01d1348274c42421af387",
+            "backupPath": "/home/mahin/.config/Code/Backups/1705737668448",
             "uiState": {
                 "mode": 1,
                 "x": 12,
                 "y": 48,
-                "width": 941,
+                "width": 1896,
                 "height": 1020
             }
         },
-        "openedWindows": [
-            {
-                "folder": "file:///home/mahin/.config/hypr",
-                "backupPath": "/home/mahin/.config/Code/Backups/8daed236ccc01d1348274c42421af387",
-                "uiState": {
-                    "mode": 1,
-                    "x": 12,
-                    "y": 48,
-                    "width": 941,
-                    "height": 1020
-                }
-            },
-            {
-                "folder": "file:///home/mahin/Hyprland-Dots-01",
-                "backupPath": "/home/mahin/.config/Code/Backups/22e6c3a1e5b3f89a8669ccb1fc94fd28",
-                "uiState": {
-                    "mode": 1,
-                    "x": 967,
-                    "y": 48,
-                    "width": 941,
-                    "height": 1020
-                }
-            }
-        ]
+        "openedWindows": []
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -149,23 +122,23 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///main/Code/all%20git-clones/Fedora-Hyprland",
-                                        "path": "/main/Code/all git-clones/Fedora-Hyprland",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/main/Code/all git-clones/Fedora-Hyprland"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
                                         "external": "file:///home/mahin/Arch-HyprV1",
                                         "path": "/home/mahin/Arch-HyprV1",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/Arch-HyprV1"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///main/Code/all%20git-clones/Fedora-Hyprland",
+                                        "path": "/main/Code/all git-clones/Fedora-Hyprland",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/main/Code/all git-clones/Fedora-Hyprland"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -270,11 +243,13 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
@@ -289,13 +264,6 @@
                         "label": "Share",
                         "submenu": {
                             "items": [
-                                {
-                                    "id": "github.copyVscodeDevLinkFile",
-                                    "label": "Copy vscode.dev Link"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
                                 {
                                     "id": "workbench.profiles.actions.exportProfile",
                                     "label": "Export Profile (Default)..."
@@ -425,15 +393,13 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
-                    },
-                    {
-                        "id": "workbench.action.closeFolder",
-                        "label": "Close &&Folder"
+                        "label": "&&Close Editor",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -478,11 +444,13 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find"
+                        "label": "&&Find",
+                        "enabled": false
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace"
+                        "label": "&&Replace",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -628,8 +596,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar",
-                                    "checked": true
+                                    "label": "&&Primary Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -927,7 +894,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "checked": true
+                        "enabled": false
                     }
                 ]
             },
@@ -935,7 +902,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -944,7 +912,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1260,7 +1229,8 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal"
+                        "label": "&&Split Terminal",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1455,10 +1425,6 @@
             "workbench.action.closeActiveEditor": {
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
-            },
-            "workbench.action.closeFolder": {
-                "label": "Ctrl+Alt+Delete",
-                "userSettingsLabel": "ctrl+alt+delete"
             },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",

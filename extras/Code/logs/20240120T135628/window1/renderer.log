@@ -1,0 +1,15 @@
+2024-01-20 13:56:37.099 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-01-20 13:56:38.601 [info] Started local extension host with pid 6022.
+2024-01-20 13:56:44.149 [info] [perf] Render performance baseline is 48ms
+2024-01-20 13:57:50.751 [error] Unknown (FileSystemError): Error: ELOOP: too many symbolic links encountered, copyfile '/home/mahin/Hyprland-Dots-01/rofi/themes/config.rasi' -> '/home/mahin/Hyprland-Dots-01/rofi/config.rasi'
+    at c.create (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:54:3486)
+    at w (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:54:3600)
+    at i.fb (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:59:35594)
+    at i.copy (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:59:33892)
+2024-01-20 13:57:50.784 [error] Error: ELOOP: too many symbolic links encountered, copyfile '/home/mahin/Hyprland-Dots-01/rofi/themes/config.rasi' -> '/home/mahin/Hyprland-Dots-01/rofi/config.rasi': Unknown (FileSystemError): Error: ELOOP: too many symbolic links encountered, copyfile '/home/mahin/Hyprland-Dots-01/rofi/themes/config.rasi' -> '/home/mahin/Hyprland-Dots-01/rofi/config.rasi'
+    at c.create (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:54:3486)
+    at w (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:54:3600)
+    at i.fb (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:59:35594)
+    at i.copy (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:59:33892)
+2024-01-20 14:01:08.897 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-01-20 14:01:09.247 [info] Started local extension host with pid 39651.
