@@ -27,7 +27,7 @@ printf "${note} - Please choose your distro to config the ${green}Neofetch${end}
 mkdir -p ~/.config
 
     printf "${note} - Copying config files...\n" 2>&1 | tee -a "$log"
-    for DIR in alacritty cava hypr kitty neofetch swaylock waybar wlogout wofi; do
+    for DIR in alacritty cava dunst hypr kitty neofetch rofi swaylock waybar wlogout wofi; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
             printf "${attention} - Config for $DIR located, backing up.\n" 2>&1 | tee -a "$log"
@@ -65,15 +65,16 @@ mkdir -p ~/.config
         esac
         sleep 1
 
-        ln -sf ~/.config/hypr/kitty ~/.config/kitty
         ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
         ln -sf ~/.config/hypr/cava ~/.config/cava
+        ln -sf ~/.config/hypr/dunst ~/.config/dunst
+        ln -sf ~/.config/hypr/kitty ~/.config/kitty
         ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
+        ln -sf ~/.config/hypr/rofi ~/.config/rofi
         ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
         ln -sf ~/.config/hypr/waybar ~/.config/waybar
         ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
         ln -sf ~/.config/hypr/wofi ~/.config/wofi
-        ln -sf ~/.config/hypr/dunst ~/.config/dunst
         sleep 1
 
         printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
