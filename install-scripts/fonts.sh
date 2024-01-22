@@ -16,27 +16,25 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_fonts.log"
+log="Install-Logs/install-$(date +%I:%M-%p)_fonts.log"
 
+# install script dir
+ScrDir=`dirname "$(realpath "$0")"`
+source $ScrDir/1-global.sh
 
-PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
-
+fonts=(
+    ttf-font-awesome
+    ttf-cascadia-code
+    ttf-jetbrains-mono-nerd
+    ttf-meslo-nerd
+    noto-fonts 
+    oto-fonts-emoji
+)
 
 printf "${action} - Now installing some necessary fonts...\n" && sleep 1
 
-for FONTS in ttf-font-awesome ttf-cascadia-code ttf-jetbrains-mono-nerd ttf-meslo-nerd noto-fonts noto-fonts-emoji; do
-        #First lets see if the package is there
-        if $PACKAGE_MAN -Qs $FONTS >/dev/null; then
-            printf "${done} - $FONTS is already installed.\n" 2>&1 | tee -a "$log"
-        else
-            printf "${note} - Now installing $FONTS ...\n"
-            sudo pacman -S --noconfirm $FONTS
-            if pacman -Qs $FONTS >/dev/null; then
-                printf "${done} - $FONTS was installed successfully!\n" 2>&1 | tee -a "$log"
-            else
-                printf "${error} - $FONTS install had failed, please check the $log file :(\n" 2>&1 | tee -a "$log"
-            fi
-        fi
+for font_pkgs in "${fonts[@]}"; do
+    install_package "$font_pkgs" "$log"
 done
 
 clear

@@ -28,6 +28,8 @@ GTK3=./extras/gtk-3.0
 GTK4=./extras/gtk-4.0
 QT5CT=./extras/qt5ct
 
+log="Install-Logs/install-$(date +%I:%M-%p)_themes.log"
+
 
 # copy theme to .themes
 mkdir -p ~/.themes
@@ -82,7 +84,10 @@ cd ~/.themes
 tar xf theme.tar.gz
 rm -rm theme.tar.gz
 
-printf "${done} - Themes copied successfully...\n" && sleep 1
+printf "${done} - Themes copied successfully...\n"
+printf "[ DONE ] - Themes copied successfully.\n" 2>&1 | tee -a "$log" &>> /dev/null
+
+sleep 1
 
 clear
 

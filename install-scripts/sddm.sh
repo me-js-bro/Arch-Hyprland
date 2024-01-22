@@ -24,7 +24,7 @@ SDDM_THEME=extras/sddm-theme
     printf "${action} - Setting up the login screen.\n"
     sudo cp -r $SDDM_THEME /usr/share/sddm/themes/
     sudo mkdir -p /etc/sddm.conf.d
-    printf "[Theme]\nCurrent=sddm-theme\n" | sudo tee -a /etc/sddm.conf.d/10-theme.conf
+    printf "[Theme]\nCurrent=sddm-theme\n" | sudo tee -a /etc/sddm.conf.d/10-theme.conf &>> /dev/null
     printf "${done} - Sddm theme installed.\n"
 
     sleep 1

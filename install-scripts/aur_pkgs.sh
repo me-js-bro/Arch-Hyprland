@@ -16,10 +16,11 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_aur_packages.log"
+log="Install-Logs/install-$(date +%I:%M-%p)_aur_packages.log"
 
-
-ISAUR=$(command -v yay || command -v paru) # find the aur helper
+# install script dir
+ScrDir=`dirname "$(realpath "$0")"`
+source $ScrDir/1-global.sh
 
 aur_packages=(
 wlogout
@@ -39,19 +40,8 @@ visual-studio-code-bin
 printf "${action} - Now installing some packages from the aur helper...\n" && sleep 1
 
 # Installing from the AUR Helper
-for AUR_SOFS in ${aur_packages[@]}; do
-        #First lets see if the package is there
-        if $ISAUR -Qs $AUR_SOFS >/dev/null; then
-            printf "${done} - $AUR_SOFS is already installed.\n" 2>&1 | tee -a "$log"
-        else
-            printf "${note} - Now installing $AUR_SOFS ...\n"
-            $ISAUR -S --noconfirm $AUR_SOFS
-            if $ISAUR -Qs $AUR_SOFS >/dev/null; then
-                printf "${done} - $AUR_SOFS was installed successfully!\n" 2>&1 | tee -a "$log"
-            else
-                printf "${error} - $AUR_SOFS install had failed. Please check the $log file :(\n" 2>&1 | tee -a "$log"
-            fi
-        fi
+for aur_pkgs in "${aur_packages[@]}"; do
+        install_from_aur "$aur_pkgs" "$log"
     done
 
 clear

@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_dotfiles.log"
+log="Install-Logs/install-$(date +%I:%M-%p)_dotfiles.log"
 
 printf "${note} - Please choose your distro to config the ${green}Neofetch${end}...\nArch: ( A/a )\nFedora: ( F/f )\n"
     read -p "Select: " distro

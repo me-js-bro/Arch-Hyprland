@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_zsh.log"
+log="Install-Logs/install-$(date +%I:%M-%p)_zsh.log"
 
 
 # clear the screen
@@ -25,15 +25,18 @@ clear
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
 # ---- install zsh ---- #
-if $PACKAGE_MAN -Qs zsh >/dev/null; then
-      printf "${done} - zsh is already installed.\n" 2>&1 | tee -a "$log"
+if $PACKAGE_MAN -Qs zsh &>>/dev/null; then
+      printf "${done} - zsh is already installed.\n"
+      printf "[ DONE ] - zsh is already installed.\n" 2>&1 | tee -a "$log" &>> /dev/null &>> /dev/null
 else
       printf "${attention} - Now installing zsh ...\n"
       sudo pacman -S --noconfirm zsh
     if pacman -Qs zsh >/dev/null; then
-        printf "${done} - zsh was installed successfully!\n" 2>&1 | tee -a "$log"
+        printf "${done} - zsh was installed successfully!\n"
+        printf "[ DONE ] - zsh was installed successfully!\n" 2>&1 | tee -a "$log" &>> /dev/null
     else
-        printf "${error} - zsh install had failed, Please check the $log file :(\n" 2>&1 | tee -a "$log"
+        printf "${error} - zsh install had failed, Please check the $log file :(\n"
+        printf "[ ERROR ] - zsh install had failed. Please install it manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
     fi
 fi
 
@@ -44,7 +47,8 @@ sleep 2
 oh_my_zsh_dir="$HOME/.oh-my-zsh"
 
 if [ -d "$oh_my_zsh_dir" ]; then
-    printf "${attention} - $oh_my_zsh_dir located, it is necessary to remove or rename it for the installation process. So renaming the directory...\n" 2>&1 | tee -a "$log"
+    printf "${attention} - $oh_my_zsh_dir located, it is necessary to remove or rename it for the installation process. So renaming the directory...\n"
+    printf "[ ATTENTION ] - $oh_my_zsh_dir located, it is necessary to remove or rename it for the installation process. So renaming the directory.\n" 2>&1 | tee -a "$log" &>> /dev/null
     mv $oh_my_zsh_dir "$oh_my_zsh_dir-back"
 fi
 
@@ -53,13 +57,16 @@ fi
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && \
 
-printf "${done} - Installation completed...\n" 2>&1 | tee -a "$log"
+printf "${done} - Installation completed...\n"
+printf "[ DONE ] - Installation completed.\n" 2>&1 | tee -a "$log" &>> /dev/null
 
   user_shell=$(echo $SHELL)
   if [[ $user_shell == "/usr/bin/zsh" ]]; then
-    printf "${note} - Your shell is already zsh. No need to change it.\n" 2>&1 | tee -a "$log"
+    printf "${note} - Your shell is already zsh. No need to change it.\n"
+    printf "[ NOTE ] - Shell is already zsh. No need to change it.\n" 2>&1 | tee -a "$log" &>> /dev/null
   else
-    printf "${action} - Changing shell to ${cyan}zsh ${end}\n" 2>&1 | tee -a "$log"
+    printf "${action} - Changing shell to ${cyan}zsh ${end}\n"
+    printf "[ ACTION ] - Changing shell to zsh\n" 2>&1 | tee -a "$log" &>> /dev/null
     chsh -s $(which zsh)
   fi
 sleep 1
@@ -68,15 +75,15 @@ printf "${action} - Now proceeding to the next step, Configuring $HOME/.zshrc fi
 sleep 2
 
   if [ -f ~/.zshrc ]; then
-    printf "${action} - Backing up the .zshrc to .zshrc.back\n" 2>&1 | tee -a "$log"
+    printf "${action} - Backing up the .zshrc to .zshrc.back\n"
         mv ~/.zshrc ~/.zshrc.back
     sleep 1
 
-    printf "${done} - Backup done\n" 2>&1 | tee -a "$log"
+    printf "${done} - Backup done\n"
   fi
 
   if [ -f ~/.p10k.zsh ]; then
-    printf "${action} - Backing up the .p10k.zsh file to .p10k.zsh.back\n" 2>&1 | tee -a "$log"
+    printf "${action} - Backing up the .p10k.zsh file to .p10k.zsh.back\n"
         mv ~/.p10k.zsh ~/.p10k.zsh.back
   fi
   sleep 1
@@ -85,10 +92,12 @@ sleep 2
 zshrc_file='extras/.zshrc'
 p10k_file='extras/.p10k.zsh'
 
-printf "${action} - Copying '$zshrc_file' and '$p10k_file' to the '$HOME/' directory\n" 2>&1 | tee -a "$log"
+printf "${action} - Copying '$zshrc_file' and '$p10k_file' to the '$HOME/' directory\n"
 sleep 1
 
 cp $zshrc_file $p10k_file "$HOME/"
 
-printf "${done} - Installation and configuration of \e[36m' zsh and oh-my-zsh '\e[0m finished!\n" 2>&1 | tee -a "$log"
-printf "${done} - You can always configure the powerlevel10k theme with the \e[33m' p10k configure '\e[0m command in your termianal.\n" 2>&1 | tee -a "$log"
+printf "${done} - Installation and configuration of ${yellow}zsh and oh-my-zsh${end} finished!\n"
+printf "${done} - Installation and configuration of " zsh and oh-my-zsh " finished!\n" 2>&1 | tee -a "$log" &>> /dev/null
+printf "${note} - You can always configure the powerlevel10k theme with the ${megenta} p10k configure${end} command in your termianal.\n"
+printf "[ NOTE ]} - You can always configure the powerlevel10k theme with the " p10k configure " command in your termianal.\n" 2>&1 | tee -a "$log" &>> /dev/null

@@ -16,12 +16,13 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%d-%m-%Y_%I:%M-%p)_hypr_packages.log"
+log="Install-Logs/install-$(date +%I:%M-%p)_hypr_packages.log"
 
+# install script dir
+ScrDir=`dirname "$(realpath "$0")"`
+source $ScrDir/1-global.sh
 
-PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
-
-packages=(
+hypr_packages=(
 hyprland
 xdg-desktop-portal-hyprland
 dunst
@@ -40,19 +41,8 @@ polkit-kde-agent
 # Instlling main packages...
 printf "${note} - Installing main packages, this may take a while...\n" && sleep 1
 
-    for SOFTWR in ${packages[@]}; do
-        #First lets see if the package is there
-        if $PACKAGE_MAN -Qs $SOFTWR >/dev/null; then
-            printf "${done} - $SOFTWR is already installed.\n" 2>&1 | tee -a "$log"
-        else
-            printf "${note} - Now installing $SOFTWR ...\n"
-            sudo pacman -S --noconfirm $SOFTWR
-            if pacman -Qs $SOFTWR >/dev/null; then
-                printf "${done} - $SOFTWR was installed successfully!\n" 2>&1 | tee -a "$log"
-            else
-                printf "${error} - $SOFTWR install had failed, Please check the $log file :(\n" 2>&1 | tee -a "$log"
-            fi
-        fi
+    for hypr_pkgs in "${hypr_packages[@]}"; do
+        install_package "$hypr_pkgs" "$log"
     done
 
 clear

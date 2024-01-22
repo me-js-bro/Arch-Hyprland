@@ -16,6 +16,8 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
+log="Install-Logs/install-$(date +%I:%M-%p)_vs-code.log"
+
 vs_code_dir=~/.config/Code
 vs_code_plugins_dir=~/.vscode
     if [ -d "$vs_code_dir" ]; then
@@ -34,5 +36,6 @@ cp -r extras/.vscode ~/
 sleep 1
 
 printf "${done} - Vs Code themes and some plugins have been copied...\n"
+printf "[ DONE ] - Vs Code themes and some plugins have been copied.\n" 2>&1 | tee -a "$log" &>> /dev/null
 
 clear
