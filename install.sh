@@ -217,7 +217,7 @@ fi
 
 
 # Enable the sddm login manager service
-if pacman -Qs sddm $>> /dev/null; then
+if pacman -Qs sddm &>> /dev/null; then
 
     printf "${note} - Enabling the SDDM Service...\n"
     sudo systemctl enable sddm
