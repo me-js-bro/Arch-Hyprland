@@ -31,7 +31,7 @@ install_package() {
     printf "[ DONE ] - $1 is already installed. Skipping...\n" 2>&1 | tee -a "$log" &>> /dev/null
   else
     # Package not installed
-    printf "${acrion} - Installing $1 ...\n"
+    printf "${action} - Installing $1 ...\n"
     sudo pacman -S --noconfirm "$1"
     # Making sure package is installed
     if sudo "$PACKAGE_MAN" -Qs "$1" &>> /dev/null ; then
@@ -57,7 +57,7 @@ install_from_aur() {
     printf "[ DONE ] - $1 is already installed. Skipping...\n" 2>&1 | tee -a "$log" &>> /dev/null
   else
     # Package not installed
-    printf "${acrion} - Installing $1 ...\n"
+    printf "${action} - Installing $1 ...\n"
     sudo "$ISAUR" -S --noconfirm "$1"
     # Making sure package is installed
     if sudo "$PACKAGE_MAN" -Qs "$1" &>> /dev/null ; then
