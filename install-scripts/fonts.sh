@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_fonts.log"
+log="Install-Logs/fonts.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`
@@ -28,7 +28,7 @@ fonts=(
     ttf-jetbrains-mono-nerd
     ttf-meslo-nerd
     noto-fonts 
-    oto-fonts-emoji
+    noto-fonts-emoji
 )
 
 printf "${action} - Now installing some necessary fonts...\n" && sleep 1

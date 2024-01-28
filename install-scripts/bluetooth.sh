@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_bluetooth_packages.log"
+log="Install-Logs/bluetooth_packages.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`

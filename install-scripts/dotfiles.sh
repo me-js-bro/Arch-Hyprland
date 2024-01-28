@@ -16,9 +16,9 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_dotfiles.log"
+log="Install-Logs/dotfiles.log"
 
-printf "${note} - Please choose your distro to config the ${green}Neofetch${end}...\nArch: ( A/a )\nFedora: ( F/f )\n"
+printf "${note} - Please choose your distro to config the ${green} Neofetch ${end}...\nArch: ( A/a )\nFedora: ( F/f )\n"
     read -p "Select: " distro
 
     sleep 1
@@ -26,13 +26,15 @@ printf "${note} - Please choose your distro to config the ${green}Neofetch${end}
 
 mkdir -p ~/.config
 
-    printf "${note} - Copying config files...\n" 2>&1 | tee -a "$log"
-    for DIR in alacritty cava dunst hypr kitty neofetch rofi swaylock waybar wlogout wofi; do
+    printf "${note} - Copying config files...\n"
+    for DIR in alacritty btop cava dunst hypr kitty neofetch rofi swaylock waybar wlogout wofi; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
-            printf "${attention} - Config for $DIR located, backing up.\n" 2>&1 | tee -a "$log"
+            printf "${attention} - Config for $DIR located, backing up.\n"
+            printf "[ ATTENTION ] - Config for $DIR located, backing up.\n\n"  2>&1 | tee -a "$log" &>> /dev/null
             mv $DIRPATH $DIRPATH-back
-            printf "${done} - Backed up $DIR to $DIRPATH-back.\n" 2>&1 | tee -a "$log"
+            printf "${done} - Backed up $DIR to $DIRPATH-back.\n"
+            printf "[ DONR ] - Backed up $DIR to $DIRPATH-back.\n\n"  2>&1 | tee -a "$log" &>> /dev/null
         fi
     done
 
@@ -40,17 +42,18 @@ mkdir -p ~/.config
 
     clear
 
-    printf "${action} - Cloning and copying dotfiles...\n" 2>&1 | tee -a "$log" && sleep 1
+    printf "${action} - Cloning and copying dotfiles...\n"
 
     hypr_dir="$HOME/.config/hypr"
     if [ -d $hypr_dir ]; then
     mv ~/.config/hypr ~/.config/hypr-backup
     fi
 
-    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr 2>&1 | tee -a "$log" && sleep 1
-
+    git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr  2>&1 | tee -a "$log" && sleep 1
 
     if [ -d "$hypr_dir" ]; then
+    
+        cd ~/.config/hypr
 
         neofetch_file="$hypr_dir/neofetch"
 
@@ -61,25 +64,30 @@ mkdir -p ~/.config
             F|f)
 		        mv "$neofetch_file/fedora-config.conf" "$neofetch_file/config.conf"
                 ;;
-            *) printf "${error} - Please choose a valid option\n"
+            *)
+                printf "${error} - Please choose a valid option to config the ${green} Neofetch ${end}.\n"
         esac
         sleep 1
 
         ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
-        ln -sf ~/.config/hypr/cava ~/.config/cava
+        ln -sf ~/.config/hypr/btop ~/.config/btop
         ln -sf ~/.config/hypr/dunst ~/.config/dunst
         ln -sf ~/.config/hypr/kitty ~/.config/kitty
+        ln -sf ~/.config/hypr/cava ~/.config/cava
         ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
         ln -sf ~/.config/hypr/rofi ~/.config/rofi
         ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
         ln -sf ~/.config/hypr/waybar ~/.config/waybar
         ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
         ln -sf ~/.config/hypr/wofi ~/.config/wofi
+
         sleep 1
 
-        printf "${done} - Copying config files finished...\n" 2>&1 | tee -a "$log"
+        printf "${done} - Copying config files finished...\n"
+        printf "[ DONE ] - Copying config files finished\n"  2>&1 | tee -a "$log" &>> /dev/null
     else 
-        printf "${error} -  Sorry, Maybe could not clone dotfiles from the github...\n" 2>&1 | tee -a "$log"
+        printf "${error} -  Sorry, Maybe could not clone dotfiles from the github\n"
+        printf "[ ERROR ] -  Sorry, Maybe could not clone dotfiles from the github\n"  2>&1 | tee -a "$log" &>> /dev/null
     fi
 
 sleep 1
@@ -91,11 +99,12 @@ if [ -d $SCRIPT_DIR ]; then
     # make all the scripts executable...
     chmod +x "$SCRIPT_DIR"/*
 
-    printf "${done} - All the necessary scripts have been executable.\n" 2>&1 | tee -a "$log"
-
+    printf "${done} - All the necessary scripts have been executable.\n"
+    printf "[ DONE ] - All the necessary scripts have been executable.\n"  2>&1 | tee -a "$log" &>> /dev/null
     sleep 1
 else
-    printf "${error} - Could not find necessary scripts\n" 2>&1 | tee -a "$log"
+    printf "${error} - Could not find necessary scripts\n"
+    printf "[ ERROR ] - Could not find necessary scripts.\n"  2>&1 | tee -a "$log" &>> /dev/null
 fi
 
 WLDIR=/usr/share/wayland-sessions
@@ -106,5 +115,9 @@ else
     sudo mkdir $WLDIR
     sudo cp extras/hyprland.desktop /usr/share/wayland-sessions/
 fi
+
+gsettings set org.gnome.desktop.interface gtk-theme "theme"
+gsettings set org.gnome.desktop.interface icon-theme "Tela-circle-dracula"
+gsettings set  org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 
 clear

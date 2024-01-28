@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_aur_helper.log"
+log="Install-Logs/aur_helper.log"
 
 printf "${attention} - Which aur helper would you like to install? it is necessary...\n1)paru \n2)yay \n"
 read -n1 -rep "Select: " aur

@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_vs-code.log"
+log="Install-Logs/vs-code.log"
 
 vs_code_dir=~/.config/Code
 vs_code_plugins_dir=~/.vscode

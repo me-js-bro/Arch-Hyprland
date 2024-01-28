@@ -40,7 +40,7 @@ install_package() {
     else
       # Something is missing, exiting to review log
       printf "${error} - $1 failed to install :( , please check the install.log .Maybe you may need to install manually.\n"
-      printf "[ ERROR ] -  $1 failed to install :( , please check the install.log. Maybe you may need to install manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
+      printf "[ ERROR ] -  $1 failed to install, please check the install.log. Maybe you need to install $1 manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
       exit 1
     fi
   fi
@@ -65,8 +65,8 @@ install_from_aur() {
       printf "[ DONE ] - $1 was installed successfully!\n" 2>&1 | tee -a "$log" &>> /dev/null
     else
       # Something is missing, exiting to review log
-      printf "${error} - $1 failed to install :( , please check the install.log .Maybe you may need to install manually.\n"
-      printf "[ ERROR ] -  $1 failed to install :( , please check the install.log. Maybe you may need to install manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
+      printf "${error} - $1 failed to install :( , please check the install.log .Maybe you need to install manually.\n"
+      printf "[ ERROR ] -  $1 failed to install, please check the install.log. Maybe you need to install $1 manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
       exit 1
     fi
   fi

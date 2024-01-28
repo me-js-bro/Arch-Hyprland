@@ -16,26 +16,26 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_aur_packages.log"
+log="Install-Logs/aur_packages.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 aur_packages=(
-wlogout
-swww
+grimblast
 hyprshot
-swayimg
-swaylock-effects-git
 qt5-svg
 qt5-quickcontrols2
 qt5-graphicaleffects
-grimblast
 rofi-lbonn-wayland
-wl-clipboard
+swww
+swayimg
+swaylock-effects-git
 visual-studio-code-bin
-    )
+wlogout
+wl-clipboard
+)
 
 printf "${action} - Now installing some packages from the aur helper...\n" && sleep 1
 

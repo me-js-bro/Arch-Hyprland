@@ -16,7 +16,7 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_write_bangla.log"
+log="Install-Logs/write_bangla.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`

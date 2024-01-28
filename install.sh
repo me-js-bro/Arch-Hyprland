@@ -63,7 +63,7 @@ fi
 
 # creating install log dir
     mkdir -p Install-Logs
-    log="Install-Logs/install-$(date +%I:%M-%p)_main.log"
+    log="Install-Logs/main.log"
 
 sleep 1
 clear
@@ -163,13 +163,6 @@ else
     exir 1
 fi
 
-# Enable the sddm login manager service
-printf "${note} - Enabling the SDDM Service...\n"
-sudo systemctl enable sddm
-sleep 2
-
-clear
-
 
 # Copy Config Files
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
@@ -221,6 +214,19 @@ else
     printf "${error} - Installing gtk theme has cancled\n"
     printf "[ ERROR ] - Installing gtk theme has cancled.\n" 2>&1 | tee -a "$log" &>> /dev/null
 fi
+
+
+# Enable the sddm login manager service
+if pacman -Qs sddm $>> /dev/null; then
+
+    printf "${note} - Enabling the SDDM Service...\n"
+    sudo systemctl enable sddm
+else
+    printf "${error} - Could not enable sddm, maybe it is not installed. Please check 'other_packages.log' inside the Install-Logs folder. \n"
+fi
+sleep 2
+
+clear
 
 
 printf "${done} - installation completed, would you like to rebooting your system...[ y/n ]\n"

@@ -16,33 +16,35 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_other_packages.log"
+log="Install-Logs/other_packages.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 other_packages=(
-pavucontrol
-pamixer
-pacman-contrib
-lxappearance
-qt5ct
-kvantum
-sddm
-brightnessctl
 bluez
 bluez-utils
 blueman
-network-manager-applet
+brightnessctl
 btop
 ibus
+kvantum
+lxappearance
+network-manager-applet
 ntfs-3g
 os-prober
+pacman-contrib
 partitionmanager
-    )
+pamixer
+pavucontrol
+qt5ct
+sddm
+yad
+)
 
 printf "${action} - Now installing some necessary packages...\n" && sleep 1
+printf " \n"
 
 for other_pkgs in "${other_packages[@]}"; do
     install_package "$other_pkgs" "$log"

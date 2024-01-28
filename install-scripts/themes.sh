@@ -28,7 +28,7 @@ GTK3=./extras/gtk-3.0
 GTK4=./extras/gtk-4.0
 QT5CT=./extras/qt5ct
 
-log="Install-Logs/install-$(date +%I:%M-%p)_themes.log"
+log="Install-Logs/themes.log"
 
 
 # copy theme to .themes

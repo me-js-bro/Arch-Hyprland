@@ -16,25 +16,25 @@ note="${megenta}[ NOTE ]${end}"
 done="${cyan}[ DONE ]${end}"
 error="${red}[ ERROR ]${end}"
 
-log="Install-Logs/install-$(date +%I:%M-%p)_hypr_packages.log"
+log="Install-Logs/hypr_packages.log"
 
 # install script dir
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 hypr_packages=(
-hyprland
-xdg-desktop-portal-hyprland
-dunst
-kitty
 alacritty
+cliphist
+dolphin
+dunst
+hyprland
+kitty
+polkit-kde-agent
+swappy
 waybar
 wofi
-cliphist
 wget
-dolphin
-swappy
-polkit-kde-agent
+xdg-desktop-portal-hyprland
 )
 
 
