@@ -6,8 +6,8 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/me-js-bro/Arch-HyprV1?style=for-the-badge&color=b4befe) </br>
-![GitHub repo size](https://img.shields.io/github/repo-size/me-js-bro/Arch-HyprV1?style=for-the-badge&color=aba6f7)
+![GitHub last commit](https://img.shields.io/github/last-commit/me-js-bro/Arch-Hyprland?style=for-the-badge&color=b4befe) </br>
+![GitHub repo size](https://img.shields.io/github/repo-size/me-js-bro/Arch-Hyprland?style=for-the-badge&color=aba6f7)
 
 </br>
 </div>
@@ -68,12 +68,12 @@ As I use only a Desktop Pc, I don't have any laptop. That's why I could not test
 
 ### Clone this repository
 ```
-git clone https://github.com/me-js-bro/Arch-HyprV1.git
+git clone --depth=1 https://github.com/me-js-bro/Arch-Hyprland.git
 ```
  ### Now run these commands
 
 ```
-cd Arch-HyprV1
+cd Arch-Hyprland
 chmod +x install.sh
 ./install.sh
 ```
