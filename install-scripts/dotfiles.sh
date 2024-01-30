@@ -18,9 +18,6 @@ error="${red}[ ERROR ]${end}"
 
 log="Install-Logs/dotfiles.log"
 
-printf "${note} - Please choose your distro to config the ${green} Neofetch ${end}...\nArch: ( A/a )\nFedora: ( F/f )\n"
-    read -p "Select: " distro
-
     sleep 1
 
 
@@ -55,18 +52,7 @@ mkdir -p ~/.config
     
         cd ~/.config/hypr
 
-        neofetch_file="$hypr_dir/neofetch"
-
-        case "$distro" in
-            A|a)
-                mv "$neofetch_file/arch-config.conf" "$neofetch_file/config.conf"
-                ;;
-            F|f)
-		        mv "$neofetch_file/fedora-config.conf" "$neofetch_file/config.conf"
-                ;;
-            *)
-                printf "${error} - Please choose a valid option to config the ${green} Neofetch ${end}.\n"
-        esac
+        mv "$hypr_dir/arch-neofetch"  "$hypr_dir/neofetch"
         sleep 1
 
         ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
@@ -86,8 +72,8 @@ mkdir -p ~/.config
         printf "${done} - Copying config files finished...\n"
         printf "[ DONE ] - Copying config files finished\n"  2>&1 | tee -a "$log" &>> /dev/null
     else 
-        printf "${error} -  Sorry, Maybe could not clone dotfiles from the github\n"
-        printf "[ ERROR ] -  Sorry, Maybe could not clone dotfiles from the github\n"  2>&1 | tee -a "$log" &>> /dev/null
+        printf "${error} -  Sorry, Maybe could not clone dotfiles from github\n"
+        printf "[ ERROR ] -  Sorry, Maybe could not clone dotfiles from github\n"  2>&1 | tee -a "$log" &>> /dev/null
     fi
 
 sleep 1
