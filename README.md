@@ -79,8 +79,6 @@ chmod +x install.sh
 ```
 
 </br>
-<h1 align="center">Some of the key-bindings..</h1>
-</br>
 
 ## After you have installed successfully, press ` Mod(Windows Button) + Shift + H ` to see the key bindings.
 
