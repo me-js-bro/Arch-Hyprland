@@ -23,7 +23,6 @@ ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 hypr_packages=(
-alacritty
 cliphist
 dolphin
 dunst
@@ -33,7 +32,6 @@ polkit-kde-agent
 swappy
 waybar
 wofi
-wget
 xdg-desktop-portal-hyprland
 )
 
