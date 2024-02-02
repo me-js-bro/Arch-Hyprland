@@ -24,7 +24,6 @@ source $ScrDir/1-global.sh
 
 hypr_packages=(
 cliphist
-dolphin
 dunst
 hyprland
 kitty
@@ -35,6 +34,14 @@ wofi
 xdg-desktop-portal-hyprland
 )
 
+thunar=(
+thunar 
+thunar-volman 
+tumbler
+ffmpegthumbnailer 
+thunar-archive-plugin
+)
+
 
 # Instlling main packages...
 printf "${note} - Installing main packages, this may take a while...\n" && sleep 1
@@ -43,4 +50,11 @@ printf "${note} - Installing main packages, this may take a while...\n" && sleep
         install_package "$hypr_pkgs" "$log"
     done
 
+sleep 1
+
+printf "${note} - Installing Thunar file manager. \n"
+    
+    for thunar in "${thunar[@]}"; do
+        install_package "$thunar" "$log"
+    done
 clear
