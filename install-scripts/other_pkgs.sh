@@ -29,6 +29,8 @@ blueman
 brightnessctl
 btop
 ibus
+imagemagick
+jq
 kvantum
 lxappearance
 network-manager-applet
@@ -38,6 +40,7 @@ pacman-contrib
 partitionmanager
 pamixer
 pavucontrol
+python-pywal
 qt5ct
 sddm
 yad

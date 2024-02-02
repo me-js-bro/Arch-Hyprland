@@ -24,7 +24,7 @@ log="Install-Logs/dotfiles.log"
 mkdir -p ~/.config
 
     printf "${note} - Copying config files...\n"
-    for DIR in alacritty btop cava dunst hypr kitty neofetch rofi swaylock waybar wlogout wofi; do
+    for DIR in btop cava dunst hypr kitty neofetch rofi swaylock waybar wlogout; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
             printf "${attention} - Config for $DIR located, backing up.\n"
@@ -55,7 +55,6 @@ mkdir -p ~/.config
         mv "$hypr_dir/arch-neofetch"  "$hypr_dir/neofetch"
         sleep 1
 
-        ln -sf ~/.config/hypr/alacritty ~/.config/alacritty
         ln -sf ~/.config/hypr/btop ~/.config/btop
         ln -sf ~/.config/hypr/dunst ~/.config/dunst
         ln -sf ~/.config/hypr/kitty ~/.config/kitty
@@ -65,7 +64,6 @@ mkdir -p ~/.config
         ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
         ln -sf ~/.config/hypr/waybar ~/.config/waybar
         ln -sf ~/.config/hypr/wlogout ~/.config/wlogout
-        ln -sf ~/.config/hypr/wofi ~/.config/wofi
 
         sleep 1
 

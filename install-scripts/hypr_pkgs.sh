@@ -23,9 +23,7 @@ ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 hypr_packages=(
-alacritty
 cliphist
-dolphin
 dunst
 hyprland
 kitty
@@ -33,8 +31,15 @@ polkit-kde-agent
 swappy
 waybar
 wofi
-wget
 xdg-desktop-portal-hyprland
+)
+
+thunar=(
+thunar 
+thunar-volman 
+tumbler
+ffmpegthumbnailer 
+thunar-archive-plugin
 )
 
 
@@ -45,4 +50,11 @@ printf "${note} - Installing main packages, this may take a while...\n" && sleep
         install_package "$hypr_pkgs" "$log"
     done
 
+sleep 1
+
+printf "${note} - Installing Thunar file manager. \n"
+    
+    for thunar in "${thunar[@]}"; do
+        install_package "$thunar" "$log"
+    done
 clear
