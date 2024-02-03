@@ -24,6 +24,7 @@ source $ScrDir/1-global.sh
 
 hypr_packages=(
 cliphist
+dolphin
 dunst
 hyprland
 kitty
@@ -52,9 +53,17 @@ printf "${note} - Installing main packages, this may take a while...\n" && sleep
 
 sleep 1
 
-printf "${note} - Installing Thunar file manager. \n"
-    
-    for thunar in "${thunar[@]}"; do
-        install_package "$thunar" "$log"
-    done
+clear
+
+printf "${attention} - Would you like to install thunar file manager? \n"
+read -n1 -rep "Select: " thunar_file
+
+if [[ "$thunar_file" == "Y" || "$thunar_file" == "y" ]]; then
+    printf "${note} - Installing Thunar file manager. \n"
+        
+        for thunar in "${thunar[@]}"; do
+            install_package "$thunar" "$log"
+        done
+fi
+
 clear

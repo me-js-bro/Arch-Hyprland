@@ -27,18 +27,16 @@
 ### Main Components:
 
 - WM: [`Hyprland`](https://hyprland.org/)
- 
-- Terminal-1: [`Alacritty`](https://alacritty.org/)
 
-- Terminal-2: [`Kitty`](https://sw.kovidgoyal.net/kitty/)
+- Terminal: [`Kitty`](https://sw.kovidgoyal.net/kitty/)
  
 - Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
- 
-- Menu-1: [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 
 - Menu-2: [`Rofi`](https://github.com/davatorium/rofi)
 
-- File Manager: [`Dolphin`](https://github.com/KDE/dolphin)
+- File Manager-1: [`Dolphin`](https://github.com/KDE/dolphin)
+
+- File Manager-2: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
 ### [Note] This is the first time I am sharing my dotfiles. This one may be not the best config, but I personally love it.</br>
 
@@ -78,8 +76,6 @@ chmod +x install.sh
 ./install.sh
 ```
 
-</br>
-<h1 align="center">Some of the key-bindings..</h1>
 </br>
 
 ## After you have installed successfully, press ` Mod(Windows Button) + Shift + H ` to see the key bindings.

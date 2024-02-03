@@ -101,3 +101,6 @@ printf "${done} - Installation and configuration of ${yellow}zsh and oh-my-zsh${
 printf "${done} - Installation and configuration of " zsh and oh-my-zsh " finished!\n" 2>&1 | tee -a "$log" &>> /dev/null
 printf "${note} - You can always configure the powerlevel10k theme with the ${megenta} p10k configure${end} command in your termianal.\n"
 printf "[ NOTE ]} - You can always configure the powerlevel10k theme with the " p10k configure " command in your termianal.\n" 2>&1 | tee -a "$log" &>> /dev/null
+
+sleep 1
+clear
