@@ -13,16 +13,13 @@
 </div>
 
 ## Screenshots
+<p align="center">
+    <img align="center" width="49%" src="Screenshots/1.png" /> <img align="center" width="49%" src="Screenshots/2.png" />
 
-![App Screenshot](Screenshots/1.png)
+   <img align="center" width="49%" src="Screenshots/3.png" /> <img align="center" width="49%" src="Screenshots/4.png" /> 
 
-![App Screenshot](Screenshots/2.png)
-
-![App Screenshot](Screenshots/3.png)
-
-![App Screenshot](Screenshots/4.png)
-
-![App Screenshot](Screenshots/5.png)
+   <img align="center" width="49%" src="Screenshots/5.png" /> <img align="center" width="49%" src="Screenshots/6.png" /> 
+</p>
 
 ### Main Components:
 
