@@ -34,7 +34,9 @@
 
 - Menu: [`Rofi`](https://github.com/davatorium/rofi)
 
-- File Manager: [`Thunar`](https://github.com/KDE/dolphin](https://docs.xfce.org/xfce/thunar/start))
+- File Manager-1: [`Dolphin`](https://github.com/KDE/dolphin)
+
+- File Manager-2: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
 ### [Note] This is the first time I am sharing my dotfiles. This one may be not the best config, but I personally love it.</br>
 
