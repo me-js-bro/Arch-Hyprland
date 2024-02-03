@@ -32,7 +32,7 @@
  
 - Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
 
-- Menu-2: [`Rofi`](https://github.com/davatorium/rofi)
+- Menu: [`Rofi`](https://github.com/davatorium/rofi)
 
 - File Manager-1: [`Dolphin`](https://github.com/KDE/dolphin)
 
