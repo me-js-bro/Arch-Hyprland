@@ -25,6 +25,7 @@ source $ScrDir/1-global.sh
 aur_packages=(
 grimblast
 hyprshot
+nordzy-cursors
 qt5-svg
 qt5-quickcontrols2
 qt5-graphicaleffects
@@ -32,7 +33,6 @@ rofi-lbonn-wayland
 swww
 swayimg
 swaylock-effects-git
-visual-studio-code-bin
 wlogout
 wl-clipboard
 )
@@ -41,7 +41,7 @@ printf "${action} - Now installing some packages from the aur helper...\n" && sl
 
 # Installing from the AUR Helper
 for aur_pkgs in "${aur_packages[@]}"; do
-        install_from_aur "$aur_pkgs" "$log"
-    done
+    install_from_aur "$aur_pkgs" "$log"
+done
 
 clear

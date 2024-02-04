@@ -22,15 +22,28 @@ log="Install-Logs/write_bangla.log"
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
-bl_pkgs=(
+# openbangla keyboard
+keyboard=(
     openbangla-keyboard
-    ttf-freebanglafont
 )
 
-printf "${action} - Now installing ${yellow}Openbangla Keyboard and some bangla fonts ${end}\n" && sleep 1
+printf "${action} - Now installing ${yellow}Openbangla Keyboard ${end}\n" && sleep 1
 
-for write_bangla_pkgs in "${bl_pkgs[@]}"; do
-    install_from_aur "$write_bangla_pkgs" "$log"
+for pkg in "${keyboard[@]}"; do
+    install_from_aur "$pkg" "$log"
 done
+
+
+# cloning a github repo of bangla fonts...
+    git clone --depth=1 https://github.com/me-js-bro/Bangla-Fonts.git 2>&1 | tee -a "$log" && sleep 1
+
+    if [ -d 'Bangla-Fonts' ]; then
+        mkdir -p ~/.local/share/fonts
+        cp -r Bangla-Fonts ~/.local/share/fonts/
+        sudo fc-cache -fv
+
+        printf "${done} - Installed some bangla fonts \n"
+        printf "[ DONE ] - Installed some bangla fonts \n" 2>&1 | tee -a "$log" &>> /dev/null
+    fi
 
 clear

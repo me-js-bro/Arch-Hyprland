@@ -18,13 +18,29 @@ error="${red}[ ERROR ]${end}"
 
 log="Install-Logs/vs-code.log"
 
+# install script dir
+ScrDir=`dirname "$(realpath "$0")"`
+source $ScrDir/1-global.sh
+
 vs_code_dir=~/.config/Code
 vs_code_plugins_dir=~/.vscode
+
+vs_code=(
+    visual-studio-code-bin
+)
+
+# installing vs code
+for pkg in "{$vs_code[@]}"; do
+    install_from_aur "$pkg" "$log"
+fi
+
+    # back up vs code directory
     if [ -d "$vs_code_dir" ]; then
         printf "${action} - Backing up .config/Code directory...\n"
         mv $vs_code_dir $vs_code_dir.backup
     fi
 
+    # back up vs code plugins directory
     if [ -d "$vs_code_plugins_dir" ]; then
         printf "${action} - Backing up directory...\n"
         mv $vs_code_plugins_dir $vs_code_plugins_dir.backup

@@ -18,12 +18,11 @@ error="${red}[ ERROR ]${end}"
 
 log="Install-Logs/dotfiles.log"
 
-    sleep 1
-
+printf "${attention} - Now starting the script for copying dotfiles. It will clone a github repository. So be patient.\n" && sleep 1
 
 mkdir -p ~/.config
 
-    printf "${note} - Copying config files...\n"
+    # if some main directories exists, backing them up.
     for DIR in btop cava dunst hypr kitty neofetch rofi swaylock waybar wlogout; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
@@ -41,20 +40,23 @@ mkdir -p ~/.config
 
     printf "${action} - Cloning and copying dotfiles...\n"
 
+    # backing up hypd directory
     hypr_dir="$HOME/.config/hypr"
     if [ -d $hypr_dir ]; then
     mv ~/.config/hypr ~/.config/hypr-backup
     fi
 
+    # cloning the dotfiles repository into ~/.config/hypr
      git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr  2>&1 | tee -a "$log" && sleep 1
 
-    if [ -d "$hypr_dir" ]; then
+    if [ -d "$hypr_dir/scripts" ]; then
     
         cd ~/.config/hypr
 
         mv "$hypr_dir/arch-neofetch"  "$hypr_dir/neofetch"
         sleep 1
 
+        # making symbolid link of the main directories. they should be edited from ~/.config/hypr directory. ( if needed )
         ln -sf ~/.config/hypr/btop ~/.config/btop
         ln -sf ~/.config/hypr/dunst ~/.config/dunst
         ln -sf ~/.config/hypr/kitty ~/.config/kitty
@@ -78,7 +80,7 @@ sleep 1
 
 # Adding all the scripts
 
-SCRIPT_DIR=~/.config/hypr/scripts/
+SCRIPT_DIR=~/.config/hypr/scripts
 if [ -d $SCRIPT_DIR ]; then
     # make all the scripts executable...
     chmod +x "$SCRIPT_DIR"/*
@@ -99,9 +101,5 @@ else
     sudo mkdir $WLDIR
     sudo cp extras/hyprland.desktop /usr/share/wayland-sessions/
 fi
-
-gsettings set org.gnome.desktop.interface gtk-theme "theme"
-gsettings set org.gnome.desktop.interface icon-theme "Tela-circle-dracula"
-gsettings set  org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 
 clear

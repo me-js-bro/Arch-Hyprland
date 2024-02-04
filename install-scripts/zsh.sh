@@ -18,27 +18,12 @@ error="${red}[ ERROR ]${end}"
 
 log="Install-Logs/zsh.log"
 
+# install script dir
+ScrDir=`dirname "$(realpath "$0")"`
+source $ScrDir/1-global.sh
 
-# clear the screen
-clear
-
-PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
-
-# ---- install zsh ---- #
-if $PACKAGE_MAN -Qs zsh &>>/dev/null; then
-      printf "${done} - zsh is already installed.\n"
-      printf "[ DONE ] - zsh is already installed.\n" 2>&1 | tee -a "$log" &>> /dev/null &>> /dev/null
-else
-      printf "${attention} - Now installing zsh ...\n"
-      sudo pacman -S --noconfirm zsh
-    if pacman -Qs zsh >/dev/null; then
-        printf "${done} - zsh was installed successfully!\n"
-        printf "[ DONE ] - zsh was installed successfully!\n" 2>&1 | tee -a "$log" &>> /dev/null
-    else
-        printf "${error} - zsh install had failed, Please check the $log file :(\n"
-        printf "[ ERROR ] - zsh install had failed. Please install it manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
-    fi
-fi
+# install zsh
+install_package zsh "$log"
 
 # ---- oh-my-zsh installation ---- #
 printf "${action} - Now installing ${yellow}' oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, powerlevel10k theme '${end}...\n"
@@ -46,12 +31,14 @@ sleep 2
 
 oh_my_zsh_dir="$HOME/.oh-my-zsh"
 
+# if the .oh-my-zsh dir is available, then backup it first
 if [ -d "$oh_my_zsh_dir" ]; then
     printf "${attention} - $oh_my_zsh_dir located, it is necessary to remove or rename it for the installation process. So renaming the directory...\n"
     printf "[ ATTENTION ] - $oh_my_zsh_dir located, it is necessary to remove or rename it for the installation process. So renaming the directory.\n" 2>&1 | tee -a "$log" &>> /dev/null
     mv $oh_my_zsh_dir "$oh_my_zsh_dir-back"
 fi
 
+  # installing plugins
  	  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && \
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
@@ -60,7 +47,9 @@ fi
 printf "${done} - Installation completed...\n"
 printf "[ DONE ] - Installation completed.\n" 2>&1 | tee -a "$log" &>> /dev/null
 
+  # changing user shell
   user_shell=$(echo $SHELL)
+
   if [[ $user_shell == "/usr/bin/zsh" ]]; then
     printf "${note} - Your shell is already zsh. No need to change it.\n"
     printf "[ NOTE ] - Shell is already zsh. No need to change it.\n" 2>&1 | tee -a "$log" &>> /dev/null
@@ -74,6 +63,7 @@ sleep 1
 printf "${action} - Now proceeding to the next step, Configuring $HOME/.zshrc file\n"
 sleep 2
 
+  # backing up and copying files for zsh and p10k theme
   if [ -f ~/.zshrc ]; then
     printf "${action} - Backing up the .zshrc to .zshrc.back\n"
         mv ~/.zshrc ~/.zshrc.back

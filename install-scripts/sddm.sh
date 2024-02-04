@@ -20,6 +20,7 @@ error="${red}[ ERROR ]${end}"
 # Set the script to exit on error
 set -e
 
+# copying the sddm theme
 SDDM_THEME=extras/sddm-theme
     printf "${action} - Setting up the login screen.\n"
     sudo cp -r $SDDM_THEME /usr/share/sddm/themes/

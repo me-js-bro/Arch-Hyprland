@@ -32,7 +32,7 @@ install_package() {
   else
     # Package not installed
     printf "${action} - Installing $1 ...\n"
-    sudo pacman -S --noconfirm "$1"
+    sudo pacman -S --noconfirm "$1" 2>&1 | tee -a "$log"
     # Making sure package is installed
     if sudo "$PACKAGE_MAN" -Qs "$1" &>> /dev/null ; then
       printf "${done} - $1 was installed successfully!\n"
@@ -41,12 +41,11 @@ install_package() {
       # Something is missing, exiting to review log
       printf "${error} - $1 failed to install :( , please check the install.log .Maybe you may need to install manually.\n"
       printf "[ ERROR ] -  $1 failed to install, please check the install.log. Maybe you need to install $1 manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
-      exit 1
     fi
   fi
 }
 
-
+# package installation from aur helper function..
 install_from_aur() {
     # set the log files variable
     log="$2"
@@ -58,7 +57,7 @@ install_from_aur() {
   else
     # Package not installed
     printf "${action} - Installing $1 ...\n"
-    sudo "$ISAUR" -S --noconfirm "$1"
+    sudo "$ISAUR" -S --noconfirm "$1" 2>&1 | tee -a "$log"
     # Making sure package is installed
     if sudo "$PACKAGE_MAN" -Qs "$1" &>> /dev/null ; then
       printf "${done} - $1 was installed successfully!\n"
@@ -67,7 +66,6 @@ install_from_aur() {
       # Something is missing, exiting to review log
       printf "${error} - $1 failed to install :( , please check the install.log .Maybe you need to install manually.\n"
       printf "[ ERROR ] -  $1 failed to install, please check the install.log. Maybe you need to install $1 manually.\n" 2>&1 | tee -a "$log" &>> /dev/null
-      exit 1
     fi
   fi
 }

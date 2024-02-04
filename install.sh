@@ -25,17 +25,17 @@ printf " Welcome to the Hyprland Installation Script by,\n"
 sleep 1
 printf " \n"
 printf " \n"
-printf "${cyan} |\  /|   /\   |    | 0 |\   |${end}   \n"
-printf "${cyan} | \/ |  /  \  |____| | | \  |${end}   \n"
-printf "${cyan} |    | /----\ |    | | |  \ |${end}   \n"
-printf "${cyan} |    |/      \|    |_|_|   \|${end}   \n"
+printf " |\  /|   /\   |    | 0 |\   |   \n"
+printf " | \/ |  /  \  |____| | | \  |   \n"
+printf " |    | /----\ |    | | |  \ |   \n"
+printf " |    |/      \|    |_|_|   \|   \n"
 printf " \n"
 printf " \n"
 
 sleep 1
 
 # all the installation scripts
-install_script_dir=./install-scripts
+install_script_dir='install-scripts'
 chmod +x "$install_script_dir"/*
 
 
@@ -51,11 +51,14 @@ error="${red}[ ERROR ]${end}"
 printf "${attention} - Would you like to continue with the installer script? It will install necessary packages and fonts. [ y/n ]\n"
 read -p "Select: " ok_script
 
+# if ok, then run the script,
 if [[ $ok_script == "Y" || $ok_script == "y" ]]; then
     clear
     printf "${action} - Starting installation script..\n"
     sleep 1
     clear
+
+# else, exit
 else
     printf "${error} - This script will exit now,${yellow} no changes were made to your system. Exiting from the script...${end}\n"
     exit 1
@@ -73,6 +76,7 @@ ISAUR=$(command -v yay || command -v paru)
 
 if [ -n "$ISAUR" ]; then
     printf "${note} - ${green}AUR helper${end} was located, moving on...\n" 
+    printf "[ NOTE ] - aur helper was located, moving on\n" 2>&1 | tee -a "$log" &>> /dev/null
     sleep 2
     clear
 else
@@ -93,17 +97,17 @@ printf "${note} - Would you like to install and enable Bluetooth service? [ y/n 
 read -n1 -rep "Select: " bluetooth
 printf " \n"
 
-## Installing openbangla keyboard and ibus
+## Installing openbangla keyboard and ibus to write Bangla
 printf "${note} - Would like to install Openbangla keyboard and ibus to write in Bangla? [ y/n ]\n"
 read -n1 -rep "Select: " BANGLA
 printf " \n"
 
-## Copy configs
+## Copy dotfiles
 printf "${note} - Would you like to copy config files? [ y/n ]\n"
 read -n1 -rep "Select: " CFG
 printf " \n"
 
-## Config sddm theme
+## Copy the sddm theme
 printf "${note} - Would you like to config sddm theme? [ y/n ]\n"
 read -n1 -rep "Select: " SDDM_CFG
 printf " \n"
@@ -113,7 +117,7 @@ printf "${note} - Would like to install zsh, oh-my-zsh and powerlevel10k theme o
 read -n1 -rep "Select: " zsh
 printf " \n"
 
-## Config Vs Code theme
+## Config Vs Code theme and some extensions
 printf "${note} - Would you like to configure Vs-Code theme? [ y/n ]\n"
 read -n1 -rep "Select: " code
 printf " \n"
@@ -133,10 +137,11 @@ printf "${done} - The system has been updated successfully, proceeding to the ne
 
 clear
 
+# storing package manager variable to check if any package is installed
 PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
+# running the scripts from the install-scripts directory
 if [[ $INST_PKGS == "Y" || $INST_PKGS == "y" ]]; then
-
     "$install_script_dir/hypr_pkgs.sh"  # Main packages
     "$install_script_dir/aur_pkgs.sh"   # aur packages
     "$install_script_dir/other_pkgs.sh" # other packages (necessary)
@@ -157,6 +162,7 @@ if [[ $INST_PKGS == "Y" || $INST_PKGS == "y" ]]; then
     fi
     
 else
+    # user did not agree to install necessary packages, so exiting the script
     printf "${error} - Necessary packages were not installed. Exiting the script here.\n"
     printf "[ ERROR ] - Necessary packages were not installed. Exiting the script here.\n" 2>&1 | tee -a "$log" &>> /dev/null
 
@@ -164,7 +170,7 @@ else
 fi
 
 
-# Copy Config Files
+# Copy dotfiles of Hyprland
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     "$install_script_dir/dotfiles.sh"
 
@@ -182,18 +188,14 @@ else
     printf "[ ERROR ] - Setting up the SDDM theme cancled.\n" 2>&1 | tee -a "$log" &>> /dev/null
 fi
 
-clear
 
-
-# Installing zsh and oh-my-zsh
+# Installing zsh, oh-my-zsh and powerleval10k theme
 if [[ $zsh == "y" || $zsh == "Y" ]]; then
     "$install_script_dir/zsh.sh"
 else
     printf "${error} - Installing and setting up the zsh is cancled\n"
     printf "[ ERROR ] - Installing and setting up the zsh is cancled.\n" 2>&1 | tee -a "$log" &>> /dev/null
 fi
-
-
 
 
 # Vs Code Theme Set
@@ -220,9 +222,11 @@ fi
 if pacman -Qs sddm &>> /dev/null; then
 
     printf "${note} - Enabling the SDDM Service...\n"
-    sudo systemctl enable sddm
+    printf "[ NOTE ] - Enabling the SDDM Service...\n" 2>&1 | tee -a "$log" &>> /dev/null
+    sudo systemctl enable sddm 2>&1 | tee -a "$log"
 else
     printf "${error} - Could not enable sddm, maybe it is not installed. Please check 'other_packages.log' inside the Install-Logs folder. \n"
+    printf "[ ERROR ] - Could not enable sddm, maybe it is not installed. Please check 'other_packages.log' inside the Install-Logs folder. \n" 2>&1 | tee -a "$log" &>> /dev/null
 fi
 sleep 2
 
