@@ -23,9 +23,9 @@ read -n1 -rep "Select: " aur
 
 if [[ "$aur" == "1" ]]; then
     printf "${action} - Installing paru..\n"
-        git clone https://aur.archlinux.org/paru.git
+        git clone https://aur.archlinux.org/paru.git 2>&1 | tee -a "$log"
         cd paru
-        makepkg -si --noconfirm
+        makepkg -si --noconfirm 2>&1 | tee -a "$log"
         cd ..
         rm -rf ./paru
         
@@ -35,9 +35,9 @@ if [[ "$aur" == "1" ]]; then
     clear
 elif [[ "$aur" == "2" ]]; then
     printf "${action} - Installing yay..\n"
-        git clone https://aur.archlinux.org/yay.git
+        git clone https://aur.archlinux.org/yay.git 2>&1 | tee -a "$log"
         cd yay
-        makepkg -si --noconfirm
+        makepkg -si --noconfirm 2>&1 | tee -a "$log"
         cd ..
         rm -rf ./yay
         

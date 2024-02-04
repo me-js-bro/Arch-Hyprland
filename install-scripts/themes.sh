@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # color defination
 red="\e[1;31m"
 green="\e[1;32m"
@@ -20,33 +19,37 @@ error="${red}[ ERROR ]${end}"
 
 # Install THEME
 CONFIG_DIR=$HOME/.config
-THEME=./extras/theme.tar.gz
-KVANTUM=./extras/Kvantum
-ICON=./extras/Icon_TelaDracula.tar.gz
-CURSOR=./extras/Nordzy-cursors.tar.gz
-GTK3=./extras/gtk-3.0
-GTK4=./extras/gtk-4.0
-QT5CT=./extras/qt5ct
+THEME='extras/theme.tar.gz'
+KVANTUM='extras/Kvantum'
+GTK3='extras/gtk-3.0'
+GTK4='extras/gtk-4.0'
+QT5CT='extras/qt5ct'
 
 log="Install-Logs/themes.log"
 
 
-# copy theme to .themes
+# creating icons and theme directory
 mkdir -p ~/.themes
+mkdir -p ~/.icons
+
 THEME_DIR=~/.themes
 printf "${action} - Copying themes\n" && sleep 1
-cp -r $THEME $THEME_DIR/
+cp -r "$THEME" ~/.themes/
 
-
-QT5CT_DIR=~/.config/qt5ct
-if [ -d $QT5CT_DIR ]; then
+# backing up the qt5ct dir
+qt5ct=~/.config/qt5ct
+if [ -d "$qt5ct" ]; then
     printf "${action} - Backing up qt5ct Configs...\n"
-    mv $QT5CT_DIR "$QT5CT_DIR-back"
+    mv "$qt5ct" "$qt5ct-back"
 fi
 sleep 1
+
+# copying the qt5ct dir
 cp -r $QT5CT ~/.config/
 printf "${done} - Copying qt5ct themes done...\n"
 
+
+# kvantum dir
 KVANTUM_DIR=~/.config/Kvantum
 if [ -d $KVANTUM_DIR ]; then
     printf "${action} - Backing up Kvantum Configs...\n"
@@ -55,30 +58,55 @@ fi
 sleep 1
 
 cp -r $KVANTUM ~/.config/
-printf "${done} - Copying Kvantum themes done..."
+printf "${done} - Copying Kvantum themes done...\n"
 
-mkdir -p ~/.icons
-cp -r $ICON ~/.icons
-cp -r $CURSOR ~/.icons
-
+# gtk 3 dir, backup and copy
 GTK3_DIR=~/.config/gtk-3.0
 if [ -d $GTK3_DIR ]; then
     mv $GTK3_DIR "$GTK3_DIR-back"
     cp -r $GTK3 ~/.config/
 fi
 
+
+# gtk 4 dir, backup and copy
 GTK4_DIR=~/.config/gtk-4.0
 if [ -d $GTK4_DIR ]; then
     mv $GTK4_DIR "$GTK4_DIR-back"
     cp -r $GTK4 ~/.config/
 fi
 
-file_dir=/etc/environment
-sudo sh -c "echo \"QT_QPA_PLATFORMTHEME='qt5ct'\" >> $file_dir"
+# installing tokyo night icons.
+Download_URL="https://github.com/ljmill/tokyo-night-icons/releases/latest/download/TokyoNight-SE.tar.bz2"
 
-cd ~/.icons
-tar xf Nordzy-cursors.tar.gz
-tar xf Icon_TelaDracula.tar.gz
+if [ ! -d '~/.icons/TokyoNight-SE' ]; then
+    printf "${action} - Installing Tokyo Night icons.\n"
+
+    # if the tokyo night icon directory was not downloaded, it will download if first
+    if [ ! -d 'TokyoNight-SE.tar.bz2' ]; then
+        for ((attempt=1; attempt<=2; attempt++)); do
+            curl -OL $Download_URL 2>&1 | tee -a "$log" && break
+            printf "Tried $attempt time, trying again..\n" 2>&1 | tee -a "$log"
+            sleep 2
+        done
+    fi
+
+    # extracting the icon
+    tar -xf TokyoNight-SE.tar.bz2 -C ~/.icons/ 2>&1 | tee -a "$log"
+
+    if [ -d '~/.icons/TokyoNight-SE' ]; then
+        printf "${done} - Successfully Installed Tokyo Night icons \n"
+        printf "[ DONE ] - Successfully Installed Tokyo Night icons \n" 2>&1 | tee -a "$log" &>> /dev/null
+    else
+        printf "${error} - Could not install Tokyo Night icons.\n"
+        printf "[ ERROR ] - Could not install Tokyo Night icons.\n" 2>&1 | tee -a "$log" &>> /dev/null
+    fi
+fi
+
+clear
+
+# setting environment variable for qt themes
+env_file=/etc/environment
+sudo sh -c "echo \"QT_QPA_PLATFORMTHEME='qt5ct'\" >> $env_file" 2>&1 | tee -a "$log"
 
 cd ~/.themes
 tar xf theme.tar.gz
@@ -88,6 +116,11 @@ printf "${done} - Themes copied successfully...\n"
 printf "[ DONE ] - Themes copied successfully.\n" 2>&1 | tee -a "$log" &>> /dev/null
 
 sleep 1
+
+# setting default themes, icon and cursor
+gsettings set org.gnome.desktop.interface gtk-theme "theme"
+gsettings set org.gnome.desktop.interface icon-theme "TokyoNight-SE"
+gsettings set org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 
 clear
 

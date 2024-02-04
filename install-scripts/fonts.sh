@@ -22,6 +22,7 @@ log="Install-Logs/fonts.log"
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
+# necessary fonts [ new installable fonts should be added here ]
 fonts=(
     ttf-font-awesome
     ttf-cascadia-code

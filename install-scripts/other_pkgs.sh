@@ -22,11 +22,8 @@ log="Install-Logs/other_packages.log"
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
+# any other packages will be installed from here
 other_packages=(
-bluez
-bluez-utils
-blueman
-brightnessctl
 btop
 ibus
 imagemagick

@@ -27,7 +27,7 @@ brightnessctl
 bluez
 bluez-utils
 blueman
-    )
+)
 
 printf "${action} - Now installing some necessary packages...\n" && sleep 1
 
