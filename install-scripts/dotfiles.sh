@@ -47,7 +47,7 @@ mkdir -p ~/.config
     fi
 
     # cloning the dotfiles repository into ~/.config/hypr
-     git clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr  2>&1 | tee -a "$log" && sleep 1
+     git --depth=1 clone https://github.com/me-js-bro/Hyprland-Dots-01.git ~/.config/hypr  2>&1 | tee -a "$log" && sleep 1
 
     if [ -d "$hypr_dir/scripts" ]; then
     
