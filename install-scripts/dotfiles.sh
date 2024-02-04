@@ -53,7 +53,7 @@ mkdir -p ~/.config
     
         cd ~/.config/hypr
 
-        mv "$hypr_dir/arch-neofetch"  "$hypr_dir/neofetch"
+        mv "$hypr_dir/arch-neofetch" "$hypr_dir/neofetch"
         sleep 1
 
         # making symbolid link of the main directories. they should be edited from ~/.config/hypr directory. ( if needed )
