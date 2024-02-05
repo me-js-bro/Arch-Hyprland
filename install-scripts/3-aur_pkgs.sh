@@ -26,6 +26,7 @@ aur_packages=(
 grimblast
 hyprshot
 nordzy-cursors
+nwg-look
 qt5-svg
 qt5-quickcontrols2
 qt5-graphicaleffects
