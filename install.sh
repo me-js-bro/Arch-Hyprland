@@ -80,7 +80,7 @@ if [ -n "$ISAUR" ]; then
     sleep 2
     clear
 else
-    "$install_script_dir/aur_helper.sh" # install aur helper
+    "$install_script_dir/1.1-aur_helper.sh" # install aur helper
 fi
 
 clear
@@ -142,10 +142,10 @@ PACKAGE_MAN=$(command -v pacman || command -v yay || command -v paru)
 
 # running the scripts from the install-scripts directory
 if [[ $INST_PKGS == "Y" || $INST_PKGS == "y" ]]; then
-    "$install_script_dir/hypr_pkgs.sh"  # Main packages
-    "$install_script_dir/aur_pkgs.sh"   # aur packages
-    "$install_script_dir/other_pkgs.sh" # other packages (necessary)
-    "$install_script_dir/fonts.sh"      # fonts
+    "$install_script_dir/2-hypr_pkgs.sh"  # Main packages
+    "$install_script_dir/3-aur_pkgs.sh"   # aur packages
+    "$install_script_dir/4-other_pkgs.sh" # other packages (necessary)
+    "$install_script_dir/5-fonts.sh"      # fonts
 
     if [[ $bluetooth == "y" || $bluetooth == "Y" ]]; then
         "$install_script_dir/bluetooth.sh"  # install and setup bluetooth
