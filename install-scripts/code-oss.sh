@@ -30,9 +30,9 @@ vs_code=(
 )
 
 # installing vs code
-for pkg in "{$vs_code[@]}"; do
+for pkg in "${vs_code[@]}"; do
     install_from_aur "$pkg" "$log"
-fi
+done
 
     # back up vs code directory
     if [ -d "$vs_code_dir" ]; then

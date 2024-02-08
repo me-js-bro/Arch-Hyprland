@@ -57,7 +57,7 @@ install_from_aur() {
   else
     # Package not installed
     printf "${action} - Installing $1 ...\n"
-    sudo "$ISAUR" -S --noconfirm "$1" 2>&1 | tee -a "$log"
+    "$ISAUR" -S --noconfirm "$1" 2>&1 | tee -a "$log"
     # Making sure package is installed
     if sudo "$PACKAGE_MAN" -Qs "$1" &>> /dev/null ; then
       printf "${done} - $1 was installed successfully!\n"
