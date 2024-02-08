@@ -81,6 +81,10 @@ if [ -n "$ISAUR" ]; then
     clear
 else
     "$install_script_dir/1.1-aur_helper.sh" # install aur helper
+
+    sleep 1
+    if [ ! -n "$ISAUR" ]; then
+        printf "${error} - Could not install any AUR Helper. exiting the script \n"
 fi
 
 clear
