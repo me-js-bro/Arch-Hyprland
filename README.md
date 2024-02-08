@@ -32,7 +32,9 @@
 
 - File Manager-2: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
-## [ `Must Read` ] As I use only a Desktop Pc, and I don't have any laptop, I could not add some features like Bletooth and Brightness Controller. Also this script is not supported for Nvidia GPU Drivers and Asus ROG laptops. I would like if you contribute on this project and add these features.<br>
+## [ `Must Read` ] As I use only a Desktop Pc, and I don't have any laptop, I could not add some features like Bletooth and Brightness Controller. Also this script is not supported for Nvidia GPU Drivers and Asus ROG laptops. I would like if you contribute on this project and add these features.
+## Also this script (dotfiles) may not work in `Virtual Box.`
+<br>
 
 ### I would like to mention [`JaKooLit`](https://github.com/JaKooLit) here. I took some of his scripts, modified and used for my project. Here is his [Arch + Hyprland](https://github.com/JaKooLit/Arch-Hyprland) installation repository. <hr>
 

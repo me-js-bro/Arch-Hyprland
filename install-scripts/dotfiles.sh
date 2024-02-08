@@ -111,4 +111,7 @@ if hostnamectl | grep -q 'Chassis: vm'; then
   sed -i '/monitor = Virtual-1, 1920x1080@60,auto,1/s/^#//' config/hypr/configs/settings.conf
 fi
 
+# removing the .git file
+rm -rf ~/.config/hypr/.git
+
 clear
