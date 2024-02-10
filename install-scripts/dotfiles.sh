@@ -139,6 +139,8 @@ if [[ "$wallpaper" == "Y" || "$wallpaper" == "y" ]]; then
         printf "[ DONE ] - Wallpapers downloaded successfully..\n" 2>&1 | tee -a "$log" &>> /dev/null
     else
         printf "${error} - Sorry, could not download wallpaper\n" && sleep 0.5
-        printf "[ ERROR ] - Sorry, could not download wallpaper\n" 2>&1 | tee -a "$log" &>> /dev/null
+        printf "[ ERROR ] - Sorry, could not download wallpaper\n" 2>&1 | tee -a "$log" &>> /dev/নুল্ল
+    fi
+fi
 
 clear
