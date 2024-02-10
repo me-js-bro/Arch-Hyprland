@@ -93,6 +93,7 @@ else
     sleep 1
     if [ ! -n "$ISAUR" ]; then
         printf "${error} - Could not install any AUR Helper. exiting the script \n"
+    fi
 fi
 
 clear
