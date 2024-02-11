@@ -45,6 +45,7 @@ rofi-lbonn-wayland
 swww
 swayimg
 swaylock-effects-git
+swaync
 wlogout
 wl-clipboard
 )
