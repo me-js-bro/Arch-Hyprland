@@ -37,7 +37,6 @@ source $ScrDir/1-global.sh
 hypr_packages=(
 cliphist
 dolphin
-dunst
 hyprland
 kitty
 polkit-kde-agent
