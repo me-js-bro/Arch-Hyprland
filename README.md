@@ -44,10 +44,8 @@
 - `Swwww` - for wallpaper and wallpaper animation
 - `Swaylock` - for lockscreen
 - `Swaylock-effects` - for swaylock effects
-- `Dunst` - for notifications
+- `Swaynd` - for notifications
 - `Grimblast` - for screenshot
-- `Brightnessctl`  - for monitor and keyboard
-- `brightness` - not needed for desktop
 - `Swayimg` - for image viewer 
 - `Pamixer` - for volume control notification
 - `Lxappearance` - for gtk themes
