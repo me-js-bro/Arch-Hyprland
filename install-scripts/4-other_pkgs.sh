@@ -36,6 +36,7 @@ source $ScrDir/1-global.sh
 # any other packages will be installed from here
 other_packages=(
 btop
+firefox
 ibus
 imagemagick
 jq
