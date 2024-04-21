@@ -74,7 +74,7 @@
 <hr>
 <br>
 
-### Settings you need to change colors in Firefox:
+### Settings you need to change in Firefox:
 
 #### I have also added script to change colors in firefox. For that you need to change a little thing.
 
