@@ -46,7 +46,6 @@ network-manager-applet
 ntfs-3g
 os-prober
 pacman-contrib
-partitionmanager
 pamixer
 pavucontrol
 python-pywal
