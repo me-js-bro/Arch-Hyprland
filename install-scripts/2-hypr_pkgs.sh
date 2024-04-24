@@ -52,7 +52,7 @@ ffmpegthumbnailer
 file-roller
 gvfs
 gvfs-mtp 
-Thunar 
+thunar 
 thunar-volman 
 tumbler 
 thunar-archive-plugin
