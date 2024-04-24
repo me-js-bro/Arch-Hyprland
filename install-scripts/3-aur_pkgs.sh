@@ -34,7 +34,6 @@ ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/1-global.sh
 
 aur_packages=(
-brave-bin
 gparted
 grimblast
 hyprshot
