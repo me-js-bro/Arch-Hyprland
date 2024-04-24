@@ -48,10 +48,13 @@ xdg-desktop-portal-hyprland
 
 # thunar file manager
 thunar=(
-thunar 
+ffmpegthumbnailer
+file-roller
+gvfs
+gvfs-mtp 
+Thunar 
 thunar-volman 
-tumbler
-ffmpegthumbnailer 
+tumbler 
 thunar-archive-plugin
 )
 
