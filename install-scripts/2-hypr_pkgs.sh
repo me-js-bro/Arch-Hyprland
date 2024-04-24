@@ -36,10 +36,10 @@ source $ScrDir/1-global.sh
 # Main Hyprland packages
 hypr_packages=(
 cliphist
-dolphin
+chromium
 hyprland
 kitty
-polkit-kde-agent
+polkit-gnome
 swappy
 waybar
 wofi
@@ -67,16 +67,11 @@ sleep 1
 
 clear
 
-printf "${attention} - Would you like to install thunar file manager? \n"
-read -n1 -rep "Select: " thunar_file
-
 # installing thunar file manager
-if [[ "$thunar_file" == "Y" || "$thunar_file" == "y" ]]; then
-    printf "${note} - Installing Thunar file manager. \n"
+printf "${note} - Installing Thunar file manager. \n"
         
-        for thunar in "${thunar[@]}"; do
-            install_package "$thunar" "$log"
-        done
-fi
+    for thunar in "${thunar[@]}"; do
+        install_package "$thunar" "$log"
+    done
 
 clear
