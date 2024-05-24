@@ -71,7 +71,6 @@ mkdir -p ~/.config
         # making symbolid link of the main directories. they should be edited from ~/.config/hypr directory. ( if needed )
         ln -sf ~/.config/hypr/btop ~/.config/btop
         ln -sf ~/.config/hypr/kitty ~/.config/kitty
-        ln -sf ~/.config/hypr/cava ~/.config/cava
         ln -sf ~/.config/hypr/neofetch ~/.config/neofetch
         ln -sf ~/.config/hypr/rofi ~/.config/rofi
         ln -sf ~/.config/hypr/swaylock ~/.config/swaylock
@@ -115,7 +114,7 @@ else
 fi
 
 # removing the .git file
-rm -rf ~/.config/hypr/.git
+sudo rm -rf ~/.config/hypr/.git
 
 clear && sleep 1
 
