@@ -159,6 +159,7 @@ if [[ $INST_PKGS == "Y" || $INST_PKGS == "y" ]]; then
     "$install_script_dir/3-aur_pkgs.sh"   # aur packages
     "$install_script_dir/4-other_pkgs.sh" # other packages (necessary)
     "$install_script_dir/5-fonts.sh"      # fonts
+    "$install_script_dir/browser.sh"      # browser
 
     if [[ $bluetooth == "y" || $bluetooth == "Y" ]]; then
         "$install_script_dir/bluetooth.sh"  # install and setup bluetooth
