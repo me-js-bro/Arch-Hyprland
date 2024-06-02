@@ -37,6 +37,7 @@ source $ScrDir/1-global.sh
 other_packages=(
 btop
 firefox
+ffmpeg
 ibus
 imagemagick
 jq
