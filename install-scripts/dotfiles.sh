@@ -34,7 +34,7 @@ printf "${attention} - Now starting the script for copying dotfiles. It will clo
 mkdir -p ~/.config
 
     # if some main directories exists, backing them up.
-    for DIR in cava dunst hypr kitty neofetch rofi swaylock swaync waybar wlogout; do
+    for DIR in hypr kitty neofetch rofi swaylock swaync waybar wlogout; do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
             printf "${attention} - Config for $DIR located, backing up.\n"
@@ -66,6 +66,11 @@ mkdir -p ~/.config
         cd ~/.config/hypr
 
         mv "$hypr_dir/arch-neofetch" "$hypr_dir/neofetch"
+
+        # remove other neofetch files and .git
+        rm -rf "$hypr_dir/fedora-neofetch"
+        rm -rf "$hypr_dir/opensuse-neofetch"
+        sudo rm -rf "$hypr_dir/.git"
         sleep 1
 
         # making symbolid link of the main directories. they should be edited from ~/.config/hypr directory. ( if needed )
@@ -112,9 +117,6 @@ else
     sudo mkdir $WLDIR
     sudo cp extras/hyprland.desktop /usr/share/wayland-sessions/
 fi
-
-# removing the .git file
-sudo rm -rf ~/.config/hypr/.git
 
 clear && sleep 1
 
